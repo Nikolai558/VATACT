@@ -18,7 +18,7 @@ Monitor and calculate the Vatsim Air Traffic Controller activity for a specific 
    * Requires a CID list in a text file [ex. CID_List.txt] (one CID per line, no spaces, no empty lines)
    * Requires you to trust the publisher (Nikolas Boling) as there is no security certificate on this program YET.
 
-## [Installation](https://github.com/Nikolai558/CID_HOURS_CALCULATOR/releases)
+## [Installation]()
    * Download the current release zip file named "V-x.x.x.zip" where x.x.x is the version number. 
    * Unzip the file.
    * Keep ALL the files together, and place where ever you would like.
