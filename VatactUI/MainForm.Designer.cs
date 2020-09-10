@@ -54,6 +54,10 @@
             this.controllerComboBox = new System.Windows.Forms.ComboBox();
             this.controllerLabel = new System.Windows.Forms.Label();
             this.failedMinReqCheckBox = new System.Windows.Forms.CheckBox();
+            this.artccHoursLabel = new System.Windows.Forms.Label();
+            this.otherControlHoursLabel = new System.Windows.Forms.Label();
+            this.artccCallsignListBox = new System.Windows.Forms.ListBox();
+            this.otherCallsignListBox = new System.Windows.Forms.ListBox();
             this.calculateHoursGroupBox.SuspendLayout();
             this.saveGroupBox.SuspendLayout();
             this.viewControllerGroupBox.SuspendLayout();
@@ -370,12 +374,60 @@
             this.failedMinReqCheckBox.Text = "Failed Hour Requirement Only";
             this.failedMinReqCheckBox.UseVisualStyleBackColor = true;
             // 
+            // artccHoursLabel
+            // 
+            this.artccHoursLabel.AutoSize = true;
+            this.artccHoursLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artccHoursLabel.Location = new System.Drawing.Point(7, 308);
+            this.artccHoursLabel.Name = "artccHoursLabel";
+            this.artccHoursLabel.Size = new System.Drawing.Size(369, 30);
+            this.artccHoursLabel.TabIndex = 3;
+            this.artccHoursLabel.Text = "{ARTCC} Control Hours {HH:MM:SS}";
+            // 
+            // otherControlHoursLabel
+            // 
+            this.otherControlHoursLabel.AutoSize = true;
+            this.otherControlHoursLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherControlHoursLabel.Location = new System.Drawing.Point(427, 308);
+            this.otherControlHoursLabel.Name = "otherControlHoursLabel";
+            this.otherControlHoursLabel.Size = new System.Drawing.Size(344, 30);
+            this.otherControlHoursLabel.TabIndex = 4;
+            this.otherControlHoursLabel.Text = "Other Control Hours {HH:MM:SS}";
+            // 
+            // artccCallsignListBox
+            // 
+            this.artccCallsignListBox.BackColor = System.Drawing.Color.DimGray;
+            this.artccCallsignListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.artccCallsignListBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.artccCallsignListBox.FormattingEnabled = true;
+            this.artccCallsignListBox.ItemHeight = 21;
+            this.artccCallsignListBox.Location = new System.Drawing.Point(12, 352);
+            this.artccCallsignListBox.Name = "artccCallsignListBox";
+            this.artccCallsignListBox.Size = new System.Drawing.Size(396, 212);
+            this.artccCallsignListBox.TabIndex = 5;
+            // 
+            // otherCallsignListBox
+            // 
+            this.otherCallsignListBox.BackColor = System.Drawing.Color.DimGray;
+            this.otherCallsignListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.otherCallsignListBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.otherCallsignListBox.FormattingEnabled = true;
+            this.otherCallsignListBox.ItemHeight = 21;
+            this.otherCallsignListBox.Location = new System.Drawing.Point(432, 352);
+            this.otherCallsignListBox.Name = "otherCallsignListBox";
+            this.otherCallsignListBox.Size = new System.Drawing.Size(396, 212);
+            this.otherCallsignListBox.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(839, 286);
+            this.ClientSize = new System.Drawing.Size(839, 571);
+            this.Controls.Add(this.otherCallsignListBox);
+            this.Controls.Add(this.artccCallsignListBox);
+            this.Controls.Add(this.otherControlHoursLabel);
+            this.Controls.Add(this.artccHoursLabel);
             this.Controls.Add(this.viewControllerGroupBox);
             this.Controls.Add(this.saveGroupBox);
             this.Controls.Add(this.calculateHoursGroupBox);
@@ -391,6 +443,7 @@
             this.viewControllerGroupBox.ResumeLayout(false);
             this.viewControllerGroupBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -422,6 +475,10 @@
         private System.Windows.Forms.CheckBox failedMinReqCheckBox;
         private System.Windows.Forms.ComboBox controllerComboBox;
         private System.Windows.Forms.Label controllerLabel;
+        private System.Windows.Forms.Label artccHoursLabel;
+        private System.Windows.Forms.Label otherControlHoursLabel;
+        private System.Windows.Forms.ListBox artccCallsignListBox;
+        private System.Windows.Forms.ListBox otherCallsignListBox;
     }
 }
 
