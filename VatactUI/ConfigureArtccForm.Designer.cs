@@ -55,6 +55,7 @@
             this.uncheckAllButton = new System.Windows.Forms.Button();
             this.autoPopulateButton = new System.Windows.Forms.Button();
             this.artccComboBox = new System.Windows.Forms.ComboBox();
+            this.newArtccLinkLabel = new System.Windows.Forms.LinkLabel();
             this.templatesGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -355,7 +356,7 @@
             this.autoPopulateButton.BackColor = System.Drawing.Color.DimGray;
             this.autoPopulateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.autoPopulateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoPopulateButton.Location = new System.Drawing.Point(275, 346);
+            this.autoPopulateButton.Location = new System.Drawing.Point(275, 345);
             this.autoPopulateButton.Name = "autoPopulateButton";
             this.autoPopulateButton.Size = new System.Drawing.Size(116, 30);
             this.autoPopulateButton.TabIndex = 25;
@@ -374,12 +375,26 @@
             this.artccComboBox.Size = new System.Drawing.Size(110, 33);
             this.artccComboBox.TabIndex = 26;
             // 
+            // newArtccLinkLabel
+            // 
+            this.newArtccLinkLabel.AutoSize = true;
+            this.newArtccLinkLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newArtccLinkLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.newArtccLinkLabel.LinkColor = System.Drawing.Color.LightGray;
+            this.newArtccLinkLabel.Location = new System.Drawing.Point(287, 378);
+            this.newArtccLinkLabel.Name = "newArtccLinkLabel";
+            this.newArtccLinkLabel.Size = new System.Drawing.Size(92, 21);
+            this.newArtccLinkLabel.TabIndex = 27;
+            this.newArtccLinkLabel.TabStop = true;
+            this.newArtccLinkLabel.Text = "New ARTCC";
+            // 
             // ConfigureArtccForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(893, 537);
+            this.ClientSize = new System.Drawing.Size(894, 536);
+            this.Controls.Add(this.newArtccLinkLabel);
             this.Controls.Add(this.artccComboBox);
             this.Controls.Add(this.autoPopulateButton);
             this.Controls.Add(this.uncheckAllButton);
@@ -432,5 +447,6 @@
         private System.Windows.Forms.Button uncheckAllButton;
         private System.Windows.Forms.Button autoPopulateButton;
         private System.Windows.Forms.ComboBox artccComboBox;
+        private System.Windows.Forms.LinkLabel newArtccLinkLabel;
     }
 }

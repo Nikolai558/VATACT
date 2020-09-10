@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.calculateHoursGroupBox = new System.Windows.Forms.GroupBox();
-            this.cidSource = new System.Windows.Forms.Label();
-            this.txtFileRadioButton = new System.Windows.Forms.RadioButton();
-            this.autoFindRadioButton = new System.Windows.Forms.RadioButton();
-            this.bothRadioButton = new System.Windows.Forms.RadioButton();
-            this.txtFilePathLabel = new System.Windows.Forms.Label();
-            this.txtFilePathTextBox = new System.Windows.Forms.TextBox();
-            this.reqHoursLabel = new System.Windows.Forms.Label();
-            this.reqHoursTextBox = new System.Windows.Forms.TextBox();
-            this.monthTextBox = new System.Windows.Forms.TextBox();
-            this.monthLabel = new System.Windows.Forms.Label();
+            this.calculateButton = new System.Windows.Forms.Button();
+            this.configureLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.artccComboBox = new System.Windows.Forms.ComboBox();
+            this.artccLabel = new System.Windows.Forms.Label();
             this.yearTextBox = new System.Windows.Forms.TextBox();
             this.yearLabel = new System.Windows.Forms.Label();
-            this.artccLabel = new System.Windows.Forms.Label();
-            this.artccComboBox = new System.Windows.Forms.ComboBox();
-            this.configureLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.calculateButton = new System.Windows.Forms.Button();
+            this.monthTextBox = new System.Windows.Forms.TextBox();
+            this.monthLabel = new System.Windows.Forms.Label();
+            this.reqHoursTextBox = new System.Windows.Forms.TextBox();
+            this.reqHoursLabel = new System.Windows.Forms.Label();
+            this.txtFilePathTextBox = new System.Windows.Forms.TextBox();
+            this.txtFilePathLabel = new System.Windows.Forms.Label();
+            this.bothRadioButton = new System.Windows.Forms.RadioButton();
+            this.autoFindRadioButton = new System.Windows.Forms.RadioButton();
+            this.txtFileRadioButton = new System.Windows.Forms.RadioButton();
+            this.cidSource = new System.Windows.Forms.Label();
             this.saveGroupBox = new System.Windows.Forms.GroupBox();
+            this.resetButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.saveDirectoryTextBox = new System.Windows.Forms.TextBox();
             this.saveLabel = new System.Windows.Forms.Label();
-            this.resetButton = new System.Windows.Forms.Button();
             this.viewControllerGroupBox = new System.Windows.Forms.GroupBox();
+            this.failedMinReqCheckBox = new System.Windows.Forms.CheckBox();
             this.controllerComboBox = new System.Windows.Forms.ComboBox();
             this.controllerLabel = new System.Windows.Forms.Label();
-            this.failedMinReqCheckBox = new System.Windows.Forms.CheckBox();
             this.artccHoursLabel = new System.Windows.Forms.Label();
             this.otherControlHoursLabel = new System.Windows.Forms.Label();
             this.artccCallsignListBox = new System.Windows.Forms.ListBox();
@@ -90,114 +90,53 @@
             this.calculateHoursGroupBox.TabStop = false;
             this.calculateHoursGroupBox.Text = "Calculate Hours";
             // 
-            // cidSource
+            // calculateButton
             // 
-            this.cidSource.AutoSize = true;
-            this.cidSource.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cidSource.Location = new System.Drawing.Point(6, 43);
-            this.cidSource.Name = "cidSource";
-            this.cidSource.Size = new System.Drawing.Size(90, 21);
-            this.cidSource.TabIndex = 0;
-            this.cidSource.Text = "CID Source:";
+            this.calculateButton.BackColor = System.Drawing.Color.DimGray;
+            this.calculateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.calculateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculateButton.Location = new System.Drawing.Point(15, 219);
+            this.calculateButton.Name = "calculateButton";
+            this.calculateButton.Size = new System.Drawing.Size(143, 33);
+            this.calculateButton.TabIndex = 9;
+            this.calculateButton.Text = "Calculate";
+            this.calculateButton.UseVisualStyleBackColor = false;
             // 
-            // txtFileRadioButton
+            // configureLinkLabel
             // 
-            this.txtFileRadioButton.AutoSize = true;
-            this.txtFileRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFileRadioButton.Location = new System.Drawing.Point(102, 41);
-            this.txtFileRadioButton.Name = "txtFileRadioButton";
-            this.txtFileRadioButton.Size = new System.Drawing.Size(81, 25);
-            this.txtFileRadioButton.TabIndex = 1;
-            this.txtFileRadioButton.TabStop = true;
-            this.txtFileRadioButton.Text = "TXT File";
-            this.txtFileRadioButton.UseVisualStyleBackColor = true;
+            this.configureLinkLabel.AutoSize = true;
+            this.configureLinkLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.configureLinkLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.configureLinkLabel.LinkColor = System.Drawing.Color.LightGray;
+            this.configureLinkLabel.Location = new System.Drawing.Point(212, 191);
+            this.configureLinkLabel.Name = "configureLinkLabel";
+            this.configureLinkLabel.Size = new System.Drawing.Size(175, 21);
+            this.configureLinkLabel.TabIndex = 14;
+            this.configureLinkLabel.TabStop = true;
+            this.configureLinkLabel.Text = "Configure / New ARTCC";
+            this.configureLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.configureLinkLabel_LinkClicked);
             // 
-            // autoFindRadioButton
+            // artccComboBox
             // 
-            this.autoFindRadioButton.AutoSize = true;
-            this.autoFindRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoFindRadioButton.Location = new System.Drawing.Point(201, 41);
-            this.autoFindRadioButton.Name = "autoFindRadioButton";
-            this.autoFindRadioButton.Size = new System.Drawing.Size(102, 25);
-            this.autoFindRadioButton.TabIndex = 2;
-            this.autoFindRadioButton.TabStop = true;
-            this.autoFindRadioButton.Text = "Vatsim API";
-            this.autoFindRadioButton.UseVisualStyleBackColor = true;
+            this.artccComboBox.BackColor = System.Drawing.Color.DimGray;
+            this.artccComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.artccComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artccComboBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.artccComboBox.FormattingEnabled = true;
+            this.artccComboBox.Location = new System.Drawing.Point(277, 219);
+            this.artccComboBox.Name = "artccComboBox";
+            this.artccComboBox.Size = new System.Drawing.Size(110, 33);
+            this.artccComboBox.TabIndex = 8;
             // 
-            // bothRadioButton
+            // artccLabel
             // 
-            this.bothRadioButton.AutoSize = true;
-            this.bothRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bothRadioButton.Location = new System.Drawing.Point(327, 41);
-            this.bothRadioButton.Name = "bothRadioButton";
-            this.bothRadioButton.Size = new System.Drawing.Size(60, 25);
-            this.bothRadioButton.TabIndex = 3;
-            this.bothRadioButton.TabStop = true;
-            this.bothRadioButton.Text = "Both";
-            this.bothRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // txtFilePathLabel
-            // 
-            this.txtFilePathLabel.AutoSize = true;
-            this.txtFilePathLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFilePathLabel.Location = new System.Drawing.Point(6, 77);
-            this.txtFilePathLabel.Name = "txtFilePathLabel";
-            this.txtFilePathLabel.Size = new System.Drawing.Size(100, 21);
-            this.txtFilePathLabel.TabIndex = 4;
-            this.txtFilePathLabel.Text = "TXT File Path:";
-            // 
-            // txtFilePathTextBox
-            // 
-            this.txtFilePathTextBox.BackColor = System.Drawing.Color.DimGray;
-            this.txtFilePathTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFilePathTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFilePathTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtFilePathTextBox.Location = new System.Drawing.Point(112, 74);
-            this.txtFilePathTextBox.Name = "txtFilePathTextBox";
-            this.txtFilePathTextBox.Size = new System.Drawing.Size(275, 29);
-            this.txtFilePathTextBox.TabIndex = 4;
-            // 
-            // reqHoursLabel
-            // 
-            this.reqHoursLabel.AutoSize = true;
-            this.reqHoursLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqHoursLabel.Location = new System.Drawing.Point(6, 160);
-            this.reqHoursLabel.Name = "reqHoursLabel";
-            this.reqHoursLabel.Size = new System.Drawing.Size(122, 21);
-            this.reqHoursLabel.TabIndex = 6;
-            this.reqHoursLabel.Text = "Min Hours (HH):";
-            // 
-            // reqHoursTextBox
-            // 
-            this.reqHoursTextBox.BackColor = System.Drawing.Color.DimGray;
-            this.reqHoursTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.reqHoursTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqHoursTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.reqHoursTextBox.Location = new System.Drawing.Point(134, 158);
-            this.reqHoursTextBox.Name = "reqHoursTextBox";
-            this.reqHoursTextBox.Size = new System.Drawing.Size(44, 29);
-            this.reqHoursTextBox.TabIndex = 7;
-            // 
-            // monthTextBox
-            // 
-            this.monthTextBox.BackColor = System.Drawing.Color.DimGray;
-            this.monthTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.monthTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.monthTextBox.Location = new System.Drawing.Point(134, 116);
-            this.monthTextBox.Name = "monthTextBox";
-            this.monthTextBox.Size = new System.Drawing.Size(44, 29);
-            this.monthTextBox.TabIndex = 5;
-            // 
-            // monthLabel
-            // 
-            this.monthLabel.AutoSize = true;
-            this.monthLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthLabel.Location = new System.Drawing.Point(6, 118);
-            this.monthLabel.Name = "monthLabel";
-            this.monthLabel.Size = new System.Drawing.Size(101, 21);
-            this.monthLabel.TabIndex = 8;
-            this.monthLabel.Text = "Month (MM):";
+            this.artccLabel.AutoSize = true;
+            this.artccLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artccLabel.Location = new System.Drawing.Point(212, 225);
+            this.artccLabel.Name = "artccLabel";
+            this.artccLabel.Size = new System.Drawing.Size(59, 21);
+            this.artccLabel.TabIndex = 12;
+            this.artccLabel.Text = "ARTCC:";
             // 
             // yearTextBox
             // 
@@ -220,52 +159,114 @@
             this.yearLabel.TabIndex = 10;
             this.yearLabel.Text = "Year (YYYY):";
             // 
-            // artccLabel
+            // monthTextBox
             // 
-            this.artccLabel.AutoSize = true;
-            this.artccLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.artccLabel.Location = new System.Drawing.Point(212, 225);
-            this.artccLabel.Name = "artccLabel";
-            this.artccLabel.Size = new System.Drawing.Size(59, 21);
-            this.artccLabel.TabIndex = 12;
-            this.artccLabel.Text = "ARTCC:";
+            this.monthTextBox.BackColor = System.Drawing.Color.DimGray;
+            this.monthTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.monthTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.monthTextBox.Location = new System.Drawing.Point(134, 116);
+            this.monthTextBox.Name = "monthTextBox";
+            this.monthTextBox.Size = new System.Drawing.Size(44, 29);
+            this.monthTextBox.TabIndex = 5;
             // 
-            // artccComboBox
+            // monthLabel
             // 
-            this.artccComboBox.BackColor = System.Drawing.Color.DimGray;
-            this.artccComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.artccComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.artccComboBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.artccComboBox.FormattingEnabled = true;
-            this.artccComboBox.Location = new System.Drawing.Point(277, 219);
-            this.artccComboBox.Name = "artccComboBox";
-            this.artccComboBox.Size = new System.Drawing.Size(110, 33);
-            this.artccComboBox.TabIndex = 8;
+            this.monthLabel.AutoSize = true;
+            this.monthLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthLabel.Location = new System.Drawing.Point(6, 118);
+            this.monthLabel.Name = "monthLabel";
+            this.monthLabel.Size = new System.Drawing.Size(101, 21);
+            this.monthLabel.TabIndex = 8;
+            this.monthLabel.Text = "Month (MM):";
             // 
-            // configureLinkLabel
+            // reqHoursTextBox
             // 
-            this.configureLinkLabel.AutoSize = true;
-            this.configureLinkLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.configureLinkLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.configureLinkLabel.LinkColor = System.Drawing.Color.LightGray;
-            this.configureLinkLabel.Location = new System.Drawing.Point(212, 191);
-            this.configureLinkLabel.Name = "configureLinkLabel";
-            this.configureLinkLabel.Size = new System.Drawing.Size(175, 21);
-            this.configureLinkLabel.TabIndex = 14;
-            this.configureLinkLabel.TabStop = true;
-            this.configureLinkLabel.Text = "Configure / New ARTCC";
+            this.reqHoursTextBox.BackColor = System.Drawing.Color.DimGray;
+            this.reqHoursTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reqHoursTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqHoursTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.reqHoursTextBox.Location = new System.Drawing.Point(134, 158);
+            this.reqHoursTextBox.Name = "reqHoursTextBox";
+            this.reqHoursTextBox.Size = new System.Drawing.Size(44, 29);
+            this.reqHoursTextBox.TabIndex = 7;
             // 
-            // calculateButton
+            // reqHoursLabel
             // 
-            this.calculateButton.BackColor = System.Drawing.Color.DimGray;
-            this.calculateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.calculateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculateButton.Location = new System.Drawing.Point(15, 219);
-            this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(143, 33);
-            this.calculateButton.TabIndex = 9;
-            this.calculateButton.Text = "Calculate";
-            this.calculateButton.UseVisualStyleBackColor = false;
+            this.reqHoursLabel.AutoSize = true;
+            this.reqHoursLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqHoursLabel.Location = new System.Drawing.Point(6, 160);
+            this.reqHoursLabel.Name = "reqHoursLabel";
+            this.reqHoursLabel.Size = new System.Drawing.Size(122, 21);
+            this.reqHoursLabel.TabIndex = 6;
+            this.reqHoursLabel.Text = "Min Hours (HH):";
+            // 
+            // txtFilePathTextBox
+            // 
+            this.txtFilePathTextBox.BackColor = System.Drawing.Color.DimGray;
+            this.txtFilePathTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFilePathTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilePathTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFilePathTextBox.Location = new System.Drawing.Point(112, 74);
+            this.txtFilePathTextBox.Name = "txtFilePathTextBox";
+            this.txtFilePathTextBox.Size = new System.Drawing.Size(275, 29);
+            this.txtFilePathTextBox.TabIndex = 4;
+            // 
+            // txtFilePathLabel
+            // 
+            this.txtFilePathLabel.AutoSize = true;
+            this.txtFilePathLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilePathLabel.Location = new System.Drawing.Point(6, 77);
+            this.txtFilePathLabel.Name = "txtFilePathLabel";
+            this.txtFilePathLabel.Size = new System.Drawing.Size(100, 21);
+            this.txtFilePathLabel.TabIndex = 4;
+            this.txtFilePathLabel.Text = "TXT File Path:";
+            // 
+            // bothRadioButton
+            // 
+            this.bothRadioButton.AutoSize = true;
+            this.bothRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bothRadioButton.Location = new System.Drawing.Point(327, 41);
+            this.bothRadioButton.Name = "bothRadioButton";
+            this.bothRadioButton.Size = new System.Drawing.Size(60, 25);
+            this.bothRadioButton.TabIndex = 3;
+            this.bothRadioButton.TabStop = true;
+            this.bothRadioButton.Text = "Both";
+            this.bothRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // autoFindRadioButton
+            // 
+            this.autoFindRadioButton.AutoSize = true;
+            this.autoFindRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoFindRadioButton.Location = new System.Drawing.Point(201, 41);
+            this.autoFindRadioButton.Name = "autoFindRadioButton";
+            this.autoFindRadioButton.Size = new System.Drawing.Size(102, 25);
+            this.autoFindRadioButton.TabIndex = 2;
+            this.autoFindRadioButton.TabStop = true;
+            this.autoFindRadioButton.Text = "Vatsim API";
+            this.autoFindRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // txtFileRadioButton
+            // 
+            this.txtFileRadioButton.AutoSize = true;
+            this.txtFileRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFileRadioButton.Location = new System.Drawing.Point(102, 41);
+            this.txtFileRadioButton.Name = "txtFileRadioButton";
+            this.txtFileRadioButton.Size = new System.Drawing.Size(81, 25);
+            this.txtFileRadioButton.TabIndex = 1;
+            this.txtFileRadioButton.TabStop = true;
+            this.txtFileRadioButton.Text = "TXT File";
+            this.txtFileRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // cidSource
+            // 
+            this.cidSource.AutoSize = true;
+            this.cidSource.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cidSource.Location = new System.Drawing.Point(6, 43);
+            this.cidSource.Name = "cidSource";
+            this.cidSource.Size = new System.Drawing.Size(90, 21);
+            this.cidSource.TabIndex = 0;
+            this.cidSource.Text = "CID Source:";
             // 
             // saveGroupBox
             // 
@@ -281,6 +282,18 @@
             this.saveGroupBox.TabIndex = 1;
             this.saveGroupBox.TabStop = false;
             this.saveGroupBox.Text = "Save Controller Hours";
+            // 
+            // resetButton
+            // 
+            this.resetButton.BackColor = System.Drawing.Color.DimGray;
+            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.resetButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetButton.Location = new System.Drawing.Point(232, 77);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(155, 33);
+            this.resetButton.TabIndex = 12;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = false;
             // 
             // saveButton
             // 
@@ -315,18 +328,6 @@
             this.saveLabel.TabIndex = 4;
             this.saveLabel.Text = "Save Directory:";
             // 
-            // resetButton
-            // 
-            this.resetButton.BackColor = System.Drawing.Color.DimGray;
-            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.resetButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton.Location = new System.Drawing.Point(232, 77);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(155, 33);
-            this.resetButton.TabIndex = 12;
-            this.resetButton.Text = "Reset";
-            this.resetButton.UseVisualStyleBackColor = false;
-            // 
             // viewControllerGroupBox
             // 
             this.viewControllerGroupBox.Controls.Add(this.failedMinReqCheckBox);
@@ -340,6 +341,17 @@
             this.viewControllerGroupBox.TabIndex = 2;
             this.viewControllerGroupBox.TabStop = false;
             this.viewControllerGroupBox.Text = "View Controller Hours";
+            // 
+            // failedMinReqCheckBox
+            // 
+            this.failedMinReqCheckBox.AutoSize = true;
+            this.failedMinReqCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.failedMinReqCheckBox.Location = new System.Drawing.Point(10, 81);
+            this.failedMinReqCheckBox.Name = "failedMinReqCheckBox";
+            this.failedMinReqCheckBox.Size = new System.Drawing.Size(239, 25);
+            this.failedMinReqCheckBox.TabIndex = 14;
+            this.failedMinReqCheckBox.Text = "Failed Hour Requirement Only";
+            this.failedMinReqCheckBox.UseVisualStyleBackColor = true;
             // 
             // controllerComboBox
             // 
@@ -362,17 +374,6 @@
             this.controllerLabel.Size = new System.Drawing.Size(83, 21);
             this.controllerLabel.TabIndex = 12;
             this.controllerLabel.Text = "Controller:";
-            // 
-            // failedMinReqCheckBox
-            // 
-            this.failedMinReqCheckBox.AutoSize = true;
-            this.failedMinReqCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.failedMinReqCheckBox.Location = new System.Drawing.Point(10, 81);
-            this.failedMinReqCheckBox.Name = "failedMinReqCheckBox";
-            this.failedMinReqCheckBox.Size = new System.Drawing.Size(239, 25);
-            this.failedMinReqCheckBox.TabIndex = 14;
-            this.failedMinReqCheckBox.Text = "Failed Hour Requirement Only";
-            this.failedMinReqCheckBox.UseVisualStyleBackColor = true;
             // 
             // artccHoursLabel
             // 
