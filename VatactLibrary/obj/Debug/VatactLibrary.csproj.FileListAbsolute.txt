@@ -1,0 +1,6 @@
+C:\Users\Pocono Coast West\Dropbox\00_PERSONAL DROPBOX\Projects\VisualStudio Projects\VATACT\VatactLibrary\bin\Debug\VatactLibrary.dll
+C:\Users\Pocono Coast West\Dropbox\00_PERSONAL DROPBOX\Projects\VisualStudio Projects\VATACT\VatactLibrary\bin\Debug\VatactLibrary.pdb
+C:\Users\Pocono Coast West\Dropbox\00_PERSONAL DROPBOX\Projects\VisualStudio Projects\VATACT\VatactLibrary\obj\Debug\VatactLibrary.csprojAssemblyReference.cache
+C:\Users\Pocono Coast West\Dropbox\00_PERSONAL DROPBOX\Projects\VisualStudio Projects\VATACT\VatactLibrary\obj\Debug\VatactLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Pocono Coast West\Dropbox\00_PERSONAL DROPBOX\Projects\VisualStudio Projects\VATACT\VatactLibrary\obj\Debug\VatactLibrary.dll
+C:\Users\Pocono Coast West\Dropbox\00_PERSONAL DROPBOX\Projects\VisualStudio Projects\VATACT\VatactLibrary\obj\Debug\VatactLibrary.pdb
