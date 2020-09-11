@@ -4,19 +4,18 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using VatactLibrary.DataAccess;
 using VatactLibrary.Models;
 
 namespace VatactLibrary
 {
     public static class GlobalConfig
     {
-        private static readonly List<string> ZLCControlPrefix = new List<string>() { "BIL_", "BOI_", "BZN_", "SUN_", "GPI_", "GTF_", "HLN_", "IDA_", "JAC_", "TWF_", "MSO_", "OGD_", "PIH_", "PVU_", "SLC_" };
-        public static readonly List<string> ControlSuffix = new List<string>() { "_DEL", "_GND", "_TWR", "_APP", "_DEP", "_CTR" };
+        public static readonly string ProgramVersion = "V-0.0.8";
 
-        public static readonly Dictionary<string, List<string>> ArtccDictionary = new Dictionary<string, List<string>>
-        {
-            { "ZLC", ZLCControlPrefix }
-        };
+        public static Dictionary<string, List<string>> ArtccDictionary;
+        public static List<string> ControlSuffix;
 
         public static string CidSource = null;
         public static string TextFilePath = null;
@@ -29,5 +28,34 @@ namespace VatactLibrary
         public static BindingList<PersonModel> AllPeople = new BindingList<PersonModel>();
         public static BindingList<PersonModel> MinimumNotMetPeople = new BindingList<PersonModel>();
         public static BindingList<PersonModel> selectedPerson = new BindingList<PersonModel>();
+
+        public static void ConfigurationSetup(bool hasConfigurationFiles) 
+        {
+            // TODO - Set this up so it grabs either the default or the user configuration files! 
+            if (!hasConfigurationFiles)
+            {
+                ArtccDictionary = UserConfigurations.Default.defaultArtccDictionary;
+                ControlSuffix = UserConfigurations.Default.ControlSuffix;
+            }
+            else
+            {
+
+            }
+        }
+
+        public static void VersionCheck() 
+        {
+            (string currentVersion, string errorMessage) = ApiCallData.GetCurrentVersion();
+
+            if (currentVersion != ProgramVersion)
+            {
+                MessageBox.Show("Program is out of date!\nPlease visit https://github.com/Nikolai558/VATACT/releases and update!");
+            }
+            else
+            {
+                return;
+            }
+        }
+
     }
 }

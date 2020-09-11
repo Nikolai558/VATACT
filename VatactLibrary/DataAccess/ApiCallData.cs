@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using VatactLibrary.Models;
 
@@ -160,6 +161,47 @@ namespace VatactLibrary.DataAccess
                 }
                 person.AllCallsigns = output;
             }
+        }
+
+        public static (string, string) GetCurrentVersion() 
+        {
+            string githubLink = "https://raw.githubusercontent.com/Nikolai558/VATACT/master/README.md";
+            string currentVersion = "";
+            string errorMessage = "";
+
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = client.GetAsync(githubLink).Result)
+                {
+                    using (HttpContent content = response.Content)
+                    {
+                        string result = content.ReadAsStringAsync().Result;
+
+                        if (result == "404: Not Found")
+                        {
+                            errorMessage = "404: Not Found";
+                            return (currentVersion, errorMessage);
+                        }
+
+
+                        // This is what we are looking for: #### --Current_Version: V-0.0.8--23
+                        string[] lines = Regex.Split(result, "\n\\s*");
+
+                        foreach (string line in lines)
+                        {
+                            if (line.Count() < 23)
+                            {
+                                continue;
+                            }
+                            if (line.Substring(0, 23) == "#### --Current_Version:")
+                            {
+                                currentVersion = line.Substring(24, 7);
+                            }
+                        }
+                    }
+                }
+            }
+            return (currentVersion, errorMessage);
         }
 
         private static (int, int) CutoffMonthYear() 
