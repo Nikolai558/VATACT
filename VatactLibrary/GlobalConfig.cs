@@ -16,8 +16,15 @@ namespace VatactLibrary
             { "ZLC", ZLCControlPrefix }
         };
 
-        
-        public static string SelectedArtcc = "";
+        public static string CidSource = null;
+        public static string TextFilePath = null;
+        public static int SelectedMonth = 0;
+        public static int SelectedYear = 0;
+        public static int SelectedRequiredHours = 0;
+        public static string SelectedArtcc = null;
+
+        public static string SaveFileDirectory = null;
+
 
     }
 }
