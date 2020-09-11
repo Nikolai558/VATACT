@@ -233,6 +233,7 @@
             this.bothRadioButton.TabStop = true;
             this.bothRadioButton.Text = "Both";
             this.bothRadioButton.UseVisualStyleBackColor = true;
+            this.bothRadioButton.Click += new System.EventHandler(this.bothRadioButton_Click);
             // 
             // autoFindRadioButton
             // 
@@ -245,6 +246,7 @@
             this.autoFindRadioButton.TabStop = true;
             this.autoFindRadioButton.Text = "Vatsim API";
             this.autoFindRadioButton.UseVisualStyleBackColor = true;
+            this.autoFindRadioButton.Click += new System.EventHandler(this.autoFindRadioButton_Click);
             // 
             // txtFileRadioButton
             // 
@@ -434,6 +436,7 @@
             this.Controls.Add(this.calculateHoursGroupBox);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.Text = "VATACT";
