@@ -16,7 +16,25 @@ namespace VatactLibrary.Models
         public string AllInfo { get { return $"{Cid} - {FullName}"; } }
         public List<CallsignModel> AllCallsigns { get; set; }
         public double TotalArtccMinutes { get; set; }
+        public string TotalArtccHours 
+        { 
+            get 
+            {
+                TimeSpan time = TimeSpan.FromMinutes(TotalArtccMinutes);
+                string hours = $"{(int)time.TotalHours}:{time.Minutes}:{time.Seconds}";
+                return hours;
+            }
+        }
         public double TotalOtherMinutes { get; set; }
+        public string TotalOtherHours
+        {
+            get
+            {
+                TimeSpan time = TimeSpan.FromMinutes(TotalOtherMinutes);
+                string hours = $"{(int)time.TotalHours}:{time.Minutes}:{time.Seconds}";
+                return hours;
+            }
+        }
         public List<string> ArtccCallsigns 
         {
             get 
@@ -70,7 +88,6 @@ namespace VatactLibrary.Models
                 return output;
             } 
         }
-
         public List<string> ArtccCallsignsAndHours 
         {
             get 
@@ -124,6 +141,10 @@ namespace VatactLibrary.Models
                                 totalTime += callsign.MinutesOnCallsign;
                             }
                         }
+                        TimeSpan time = TimeSpan.FromMinutes(totalTime);
+                        string hours = $"{(int)time.TotalHours}:{time.Minutes}:{time.Seconds}";
+
+                        output.Add($"{otherCallsign} - {hours}");
                     }
                 }
                 else
@@ -134,5 +155,6 @@ namespace VatactLibrary.Models
                 return output;
             }
         }
+        public bool MetMinReqHours { get; set; }
     }
 }
