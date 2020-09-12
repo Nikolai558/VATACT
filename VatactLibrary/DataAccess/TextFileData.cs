@@ -73,7 +73,7 @@ namespace VatactLibrary.DataAccess
             {
                 if (!person.MetMinReqHours)
                 {
-                    sb.AppendLine($"\t\t{person.AllInfo}: {person.TotalArtccMinutes}");
+                    sb.AppendLine($"\t\t{person.AllInfo}: {person.TotalArtccHours}");
                 }
             }
             sb.AppendLine("\n\n::::::::::::::::::::::::::::::::::::::::::::::::::");
