@@ -58,6 +58,7 @@
             this.otherControlHoursLabel = new System.Windows.Forms.Label();
             this.artccCallsignListBox = new System.Windows.Forms.ListBox();
             this.otherCallsignListBox = new System.Windows.Forms.ListBox();
+            this.processingLabel = new System.Windows.Forms.Label();
             this.calculateHoursGroupBox.SuspendLayout();
             this.saveGroupBox.SuspendLayout();
             this.viewControllerGroupBox.SuspendLayout();
@@ -101,6 +102,7 @@
             this.calculateButton.TabIndex = 9;
             this.calculateButton.Text = "Calculate";
             this.calculateButton.UseVisualStyleBackColor = false;
+            this.calculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // configureLinkLabel
             // 
@@ -114,7 +116,7 @@
             this.configureLinkLabel.TabIndex = 14;
             this.configureLinkLabel.TabStop = true;
             this.configureLinkLabel.Text = "Configure / New ARTCC";
-            this.configureLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.configureLinkLabel_LinkClicked);
+            this.configureLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ConfigureLinkLabel_LinkClicked);
             // 
             // artccComboBox
             // 
@@ -148,6 +150,7 @@
             this.yearTextBox.Name = "yearTextBox";
             this.yearTextBox.Size = new System.Drawing.Size(94, 29);
             this.yearTextBox.TabIndex = 6;
+            this.yearTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // yearLabel
             // 
@@ -169,6 +172,7 @@
             this.monthTextBox.Name = "monthTextBox";
             this.monthTextBox.Size = new System.Drawing.Size(44, 29);
             this.monthTextBox.TabIndex = 5;
+            this.monthTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // monthLabel
             // 
@@ -190,6 +194,7 @@
             this.reqHoursTextBox.Name = "reqHoursTextBox";
             this.reqHoursTextBox.Size = new System.Drawing.Size(44, 29);
             this.reqHoursTextBox.TabIndex = 7;
+            this.reqHoursTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // reqHoursLabel
             // 
@@ -233,7 +238,7 @@
             this.bothRadioButton.TabStop = true;
             this.bothRadioButton.Text = "Both";
             this.bothRadioButton.UseVisualStyleBackColor = true;
-            this.bothRadioButton.Click += new System.EventHandler(this.bothRadioButton_Click);
+            this.bothRadioButton.Click += new System.EventHandler(this.BothRadioButton_Click);
             // 
             // autoFindRadioButton
             // 
@@ -246,7 +251,7 @@
             this.autoFindRadioButton.TabStop = true;
             this.autoFindRadioButton.Text = "Vatsim API";
             this.autoFindRadioButton.UseVisualStyleBackColor = true;
-            this.autoFindRadioButton.Click += new System.EventHandler(this.autoFindRadioButton_Click);
+            this.autoFindRadioButton.Click += new System.EventHandler(this.AutoFindRadioButton_Click);
             // 
             // txtFileRadioButton
             // 
@@ -296,6 +301,7 @@
             this.resetButton.TabIndex = 12;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = false;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // saveButton
             // 
@@ -354,6 +360,7 @@
             this.failedMinReqCheckBox.TabIndex = 14;
             this.failedMinReqCheckBox.Text = "Failed Hour Requirement Only";
             this.failedMinReqCheckBox.UseVisualStyleBackColor = true;
+            this.failedMinReqCheckBox.CheckedChanged += new System.EventHandler(this.FailedMinReqCheckBox_CheckedChanged);
             // 
             // controllerComboBox
             // 
@@ -366,6 +373,7 @@
             this.controllerComboBox.Name = "controllerComboBox";
             this.controllerComboBox.Size = new System.Drawing.Size(292, 33);
             this.controllerComboBox.TabIndex = 13;
+            this.controllerComboBox.SelectedIndexChanged += new System.EventHandler(this.ControllerComboBox_SelectedIndexChanged);
             // 
             // controllerLabel
             // 
@@ -421,12 +429,23 @@
             this.otherCallsignListBox.Size = new System.Drawing.Size(396, 212);
             this.otherCallsignListBox.TabIndex = 6;
             // 
+            // processingLabel
+            // 
+            this.processingLabel.AutoSize = true;
+            this.processingLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.processingLabel.Location = new System.Drawing.Point(469, 276);
+            this.processingLabel.Name = "processingLabel";
+            this.processingLabel.Size = new System.Drawing.Size(229, 21);
+            this.processingLabel.TabIndex = 13;
+            this.processingLabel.Text = "** Still Processing: {} of {} Left **";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(839, 571);
+            this.Controls.Add(this.processingLabel);
             this.Controls.Add(this.otherCallsignListBox);
             this.Controls.Add(this.artccCallsignListBox);
             this.Controls.Add(this.otherControlHoursLabel);
@@ -483,6 +502,7 @@
         private System.Windows.Forms.Label otherControlHoursLabel;
         private System.Windows.Forms.ListBox artccCallsignListBox;
         private System.Windows.Forms.ListBox otherCallsignListBox;
+        private System.Windows.Forms.Label processingLabel;
     }
 }
 
