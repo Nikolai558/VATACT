@@ -137,7 +137,7 @@ SET /P USERSELECT=Type Y or N and press enter:
 
 :MAKE_SHORTCUT
 
-mklink "%USERPROFILE%\Desktop\VATACT.exe" "%INSTALL_DIR%\CidCalculatorUI.exe"
+mklink "%USERPROFILE%\Desktop\VATACT.exe" "%INSTALL_DIR%\VATACT.exe"
 
 :INSTALL_DONE
 
