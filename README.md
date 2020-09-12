@@ -15,14 +15,15 @@ Monitor and calculate the Vatsim Air Traffic Controller activity for a specific 
 ## Prerequisites
    * Windows OS. Other Operating systems are not supported at this time.
    * Stable internet connection
-   * Requires a CID list in a text file [ex. CID_List.txt] (one CID per line, no spaces, no empty lines)
+   * Requires a CID list in a text file {ex. CID_List.txt} (one CID per line, no spaces, no empty lines)
    * Requires you to trust the publisher (Nikolas Boling) as there is no security certificate on this program YET.
 
-## [Installation]()
+## [Installation](https://github.com/Nikolai558/VATACT/releases)
    * Download the current release zip file named "V-x.x.x.zip" where x.x.x is the version number. 
    * Unzip the file.
-   * Keep ALL the files together, and place where ever you would like.
-   * To run it, click VATACT.exe
+   * Keep ALL the files together
+   * There is a Batch file called "INSTALL_UNINSTALL.bat" to help with installing this program.
+   * To run this program, click VATACT.exe
 
 ## Using VATACT
    * CID Text file field:
@@ -49,11 +50,11 @@ Monitor and calculate the Vatsim Air Traffic Controller activity for a specific 
             2. Other Total Hours
                * This list every callsign used that is not included in the "Valid ARTCC Control Callsigns catagory"
       * Once the calculation and API calls are complete, you can then save the output to a text file.
-   * CID Text file
+   * Save Text file directory
       * Requires a directory {ex. C:\downloads\}
    * Save button
       * Look for your newly created text file in the directory you specified.
-         * It will be named "{month}_{year}_CID_HOURS.txt" [ex. 08_2020_CID_HOURS.txt]
+         * It will be named "{month}_{year}_CID_HOURS.txt" {ex. 08_2020_CID_HOURS.txt}
 
 ## Contributions
    * None at this time
@@ -62,7 +63,7 @@ Monitor and calculate the Vatsim Air Traffic Controller activity for a specific 
    * If you would like to contact me, you can reach me at NikBoling@gmail.com
 
 ## Additional comments from the Author
-   * I know the code source is a little messy right now, however, there are plans to refactor and improve.
+   * I know the source code is a little messy right now, however, there are plans to refactor and improve.
 
 ## Licence Information
 [MIT License](https://github.com/Nikolai558/VATACT/blob/master/LICENSE) Copyright (c) 2020 Nikolas Boling
