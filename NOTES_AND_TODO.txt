@@ -8,11 +8,7 @@ Notes and Todo's are updated as of: 09/10/2020 @ 1:45 PM MT
 
 
 // TODO - Version check
-// TODO - Wire up API Calls for Person Name
-// TODO - Wire up API Calls for CID Callsigns
 // TODO - Wire up API Call for Auto Find CID's
-// TODO - Wire up read CID.txt list
-// TODO - Create Configure Artcc Form
 // TODO - Wire up Configure Artcc Form
 // TODO - Save Settings from "last" session
 // TODO - If no configure file is found, Start application in configure form first
