@@ -36,7 +36,7 @@ namespace VatactLibrary.DataAccess
                 }
             }
 
-            if ((totalArtccMinutes / 60) >= GlobalConfig.SelectedRequiredHours)
+            if ((totalArtccMinutes / 60) >= int.Parse(GlobalConfig.SelectedRequiredHours))
             {
                 requirementMet = true;
             }
@@ -48,6 +48,7 @@ namespace VatactLibrary.DataAccess
             person.TotalArtccMinutes = totalArtccMinutes;
             person.TotalOtherMinutes = totalOtherMinutes;
             person.MetMinReqHours = requirementMet;
+
         }
     }
 }

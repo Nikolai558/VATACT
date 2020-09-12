@@ -122,12 +122,25 @@ namespace VatactLibrary.DataAccess
 
                         if (month == GlobalConfig.SelectedMonth.ToString() & year == GlobalConfig.SelectedYear.ToString())
                         {
+                            // TODO (01 / 02) - Verify "End Date" does not go into next month.
+
                             CallsignModel c = new CallsignModel
                             {
                                 Id = id,
                                 Callsign = connection["callsign"].ToString(),
-                                MinutesOnCallsign = double.Parse(connection["minutes_on_callsign"].ToString())
+                                MinutesOnCallsign = double.Parse(connection["minutes_on_callsign"].ToString()),
+                                StartDateTime = (DateTime)connection["start"]
                             };
+
+                            if (connection["end"] != null)
+                            {
+                                c.EndDateTime = (DateTime)connection["end"];
+                            }
+                            else
+                            {
+                                // Controller is curently controlling and online.
+                                // TODO - Need to figure out how to handle when the controller is online.
+                            }
 
                             output.Add(c);
                             id += 1;
@@ -148,12 +161,25 @@ namespace VatactLibrary.DataAccess
 
                     if (month == GlobalConfig.SelectedMonth.ToString() & year == GlobalConfig.SelectedYear.ToString())
                     {
+                        // TODO (02 / 02) - Verify "End Date" does not go into next month.
+
                         CallsignModel c = new CallsignModel
                         {
                             Id = id,
                             Callsign = connection["callsign"].ToString(),
-                            MinutesOnCallsign = double.Parse(connection["minutes_on_callsign"].ToString())
+                            MinutesOnCallsign = double.Parse(connection["minutes_on_callsign"].ToString()),
+                            StartDateTime = (DateTime)connection["start"],
                         };
+
+                        if (connection["end"] != null)
+                        {
+                            c.EndDateTime = (DateTime)connection["end"];
+                        }
+                        else
+                        {
+                            // Controller is curently controlling and online.
+                            // TODO - Need to figure out how to handle when the controller is online.
+                        }
 
                         output.Add(c);
                         id += 1;
@@ -209,15 +235,15 @@ namespace VatactLibrary.DataAccess
             int cutOffMonth;
             int cutOffYear;
 
-            if (GlobalConfig.SelectedMonth == 01)
+            if (int.Parse(GlobalConfig.SelectedMonth) == 01)
             {
                 cutOffMonth = 12;
-                cutOffYear = GlobalConfig.SelectedYear - 1;
+                cutOffYear = int.Parse(GlobalConfig.SelectedYear) - 1;
             }
             else
             {
-                cutOffMonth = GlobalConfig.SelectedMonth - 1;
-                cutOffYear = GlobalConfig.SelectedYear;
+                cutOffMonth = int.Parse(GlobalConfig.SelectedMonth) - 1;
+                cutOffYear = int.Parse(GlobalConfig.SelectedYear);
             }
             return (cutOffMonth, cutOffYear);
         }

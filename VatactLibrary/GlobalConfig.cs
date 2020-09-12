@@ -19,9 +19,9 @@ namespace VatactLibrary
 
         public static string CidSource = null;
         public static string TextFilePath = null;
-        public static int SelectedMonth = 0;
-        public static int SelectedYear = 0;
-        public static int SelectedRequiredHours = 0;
+        public static string SelectedMonth = null;
+        public static string SelectedYear = null;
+        public static string SelectedRequiredHours = null;
         public static string SelectedArtcc = null;
         public static string SaveFileDirectory = null;
 
@@ -47,9 +47,13 @@ namespace VatactLibrary
         {
             (string currentVersion, string errorMessage) = ApiCallData.GetCurrentVersion();
 
-            if (currentVersion != ProgramVersion)
+            if (currentVersion != ProgramVersion && errorMessage != "404: Not Found")
             {
-                MessageBox.Show("Program is out of date!\nPlease visit https://github.com/Nikolai558/VATACT/releases and update!");
+                MessageBox.Show($"Program is out of date!\n\nYour Program Version: {ProgramVersion}\nGithub Version: {currentVersion}\n\nPlease visit https://github.com/Nikolai558/VATACT/releases and update!");
+            }
+            else if (errorMessage == "404: Not Found")
+            {
+                MessageBox.Show($"Program could not preforme Version Check.\n\nhttps://github.com/Nikolai558/VATACT/blob/master/README.md\n\nThe above website could not be reached.");
             }
             else
             {
