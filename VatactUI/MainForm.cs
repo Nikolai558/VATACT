@@ -181,7 +181,7 @@ namespace VatactUI
 
         private void NotImplementedMessage() 
         {
-            MessageBox.Show("This Has not be implemented yet.");
+            MessageBox.Show("This has not be implemented yet.");
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
@@ -352,6 +352,13 @@ namespace VatactUI
         {
             bool isValid = true;
             string errorMessage = "";
+
+            if (GlobalConfig.AllPeople.Count == 0)
+            {
+                isValid = false;
+                errorMessage += $"You haven't done any Calculations.\n";
+                return isValid;
+            }
 
             if (GlobalConfig.AllPeople.Count != File.ReadAllLines(txtFilePathTextBox.Text).ToList().Count())
             {
