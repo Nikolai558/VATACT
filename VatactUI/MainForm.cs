@@ -217,7 +217,6 @@ namespace VatactUI
             if (dialogResult == DialogResult.Yes)
             {
                 int totalCidsLeft = lines.Count();
-                processingLabel.Visible = true;
 
                 foreach (string line in lines)
                 {
@@ -232,6 +231,8 @@ namespace VatactUI
                     await VatactLibrary.DataAccess.ApiCallData.GetCallsignsUsed(person);
                     VatactLibrary.DataAccess.DataManipulation.CalculateMinimumHoursRequirement(person);
 
+                    processingLabel.Visible = true;
+
                     if (!person.MetMinReqHours)
                     {
                         GlobalConfig.MinimumNotMetPeople.Add(person);
@@ -242,7 +243,7 @@ namespace VatactUI
                     id += 1;
                     totalCidsLeft -= 1;
 
-                    processingLabel.Text = $"** Processing ** {totalCidsLeft} CID's Left too Process **";
+                    processingLabel.Text = $"** Processing ** ( {totalCidsLeft} CID's Left to Process)";
                     WireUpList();
                 }
 
@@ -314,7 +315,7 @@ namespace VatactUI
             WireUpList();
         }
 
-        private void resetButton_Click(object sender, EventArgs e)
+        private void ResetButton_Click(object sender, EventArgs e)
         {
             ResetAll();
         }
@@ -334,7 +335,48 @@ namespace VatactUI
             GlobalConfig.selectedPerson.Clear();
 
             EnableFields(true);
+            saveButton.Enabled = true;
             WireUpList();
     }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            if (ValidateSaveButton())
+            {
+                saveButton.Enabled = false;
+                StartSave();
+            }
+        }
+
+        private bool ValidateSaveButton() 
+        {
+            bool isValid = true;
+            string errorMessage = "";
+
+            if (GlobalConfig.AllPeople.Count != File.ReadAllLines(txtFilePathTextBox.Text).ToList().Count())
+            {
+                isValid = false;
+                errorMessage += $"{GlobalConfig.AllPeople.Count} is not the same count as the CID List.\n";
+            }
+            if (!Directory.Exists(saveDirectoryTextBox.Text))
+            {
+                isValid = false;
+                errorMessage += $"Save Directory does not exist.\n";
+            }
+
+
+            if (!isValid)
+            {
+                MessageBox.Show(errorMessage);
+            }
+
+            return isValid;
+        }
+
+        private void StartSave() 
+        {
+            GlobalConfig.SaveFileDirectory = saveDirectoryTextBox.Text;
+            VatactLibrary.DataAccess.TextFileData.WriteToTextFile(GlobalConfig.AllPeople.ToList());
+        }
     }
 }

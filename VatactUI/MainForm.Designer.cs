@@ -301,7 +301,7 @@
             this.resetButton.TabIndex = 12;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = false;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // saveButton
             // 
@@ -314,6 +314,7 @@
             this.saveButton.TabIndex = 11;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // saveDirectoryTextBox
             // 
