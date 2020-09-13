@@ -9,7 +9,7 @@ Monitor and calculate the Vatsim Air Traffic Controller activity for a specific 
 ![GitHub forks](https://img.shields.io/github/forks/Nikolai558/VATACT?style=social)
 
 ## Acknowledgements
-   * [@KSanders7070](https://github.com/KSanders7070) - Thanks for helping with UI design, Code implementations, Program Name, Color Scheme, Code Functionality, Batch File Creations, and Supporting my endeavours. 
+   * [@KSanders7070](https://github.com/KSanders7070) **Concept Design** - Thanks for helping with UI design, Code implementations, Program Name, Color Scheme, Code Functionality, Batch File Creations, and Supporting my endeavours. 
    * [VATSIM](https://www.vatsim.net/) [API](https://api.vatsim.net/api/) - Thanks for providing some amazing Web based API's free to the public.  
 
 ## Prerequisites
