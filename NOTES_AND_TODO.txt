@@ -2,14 +2,13 @@ Notes and Todo's are updated as of: 09/10/2020 @ 1:45 PM MT
 
 
 // NOTE: Main Form Window Size Start = 855 x 325
-// NOTE: Main Form Window Size After = 855 x 610
+// NOTE: Main Form Window Size After = 855 x 615
 // NOTE: Configure Artcc Form Size Start = 910 x 445
 // NOTE: Colors used = "RGB(64,64,64)", "WhiteSmoke", "DimGray", "LightGray"
 
 
-// TODO - Version check
 // TODO - Wire up API Call for Auto Find CID's
-// TODO - Wire up Configure Artcc Form
+// TODO - Complete Configure Artcc Form
 // TODO - Save Settings from "last" session
 // TODO - If no configure file is found, Start application in configure form first
 // TODO - Get Logo / Icon for program
