@@ -11,6 +11,10 @@ namespace VatactLibrary.DataAccess
 {
     public class TextFileData
     {
+        /// <summary>
+        /// Read a text file of CID's and create a person model from the list
+        /// </summary>
+        /// <returns>Creates a Person Model, Returns nothing.</returns>
         public async Task ReadCidList()
         {
             List<string> lines = File.ReadAllLines(GlobalConfig.TextFilePath).ToList();
@@ -47,6 +51,10 @@ namespace VatactLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Export the data into a text file
+        /// </summary>
+        /// <param name="people">List of Person Models</param>
         public static void WriteToTextFile(List<PersonModel> people)
         {
             string filePath = $"{GlobalConfig.SaveFileDirectory}\\{GlobalConfig.SelectedMonth}_{GlobalConfig.SelectedYear}_CID_HOURS.txt";
@@ -56,7 +64,6 @@ namespace VatactLibrary.DataAccess
                 DialogResult dialogResult = MessageBox.Show("CID Hour Calculation for selected Month and year Found.\nWould you like to overwrite it?", "Overide File?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                 {
-                    // TODO - Re-enable the "Save Button"
                     return;
                 }
             }

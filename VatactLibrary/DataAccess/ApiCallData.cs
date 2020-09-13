@@ -12,6 +12,11 @@ namespace VatactLibrary.DataAccess
 {
     public class ApiCallData
     {
+        /// <summary>
+        /// API Call to Vatsim Server to get the Person Name from their CID.
+        /// </summary>
+        /// <param name="person">Person Model</param>
+        /// <returns>Doesn't return anything but will set the name for the Person Model passed in.</returns>
         public static async Task GetCidName(PersonModel person) 
         {
             HttpClient client = new HttpClient();
@@ -24,6 +29,11 @@ namespace VatactLibrary.DataAccess
             person.LastName = (string)obj["name_last"];
         }
 
+        /// <summary>
+        /// API Call to Vatsim servers to get the Callsigns used for the Person Model.
+        /// </summary>
+        /// <param name="person">Person Model</param>
+        /// <returns>Doesn't return anything but will set the Callsigns Used for the Person Model passed in.</returns>
         public static async Task GetCallsignsUsed(PersonModel person)
         {
             HttpClient client = new HttpClient();
@@ -189,6 +199,10 @@ namespace VatactLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Version Check
+        /// </summary>
+        /// <returns>(Github Version, Error Message)</returns>
         public static (string, string) GetCurrentVersion() 
         {
             string githubLink = "https://raw.githubusercontent.com/Nikolai558/VATACT/master/README.md";
@@ -230,6 +244,10 @@ namespace VatactLibrary.DataAccess
             return (currentVersion, errorMessage);
         }
 
+        /// <summary>
+        /// Calculate the cut off month and year
+        /// </summary>
+        /// <returns>(Cut off Month, Cut off Year)</returns>
         private static (int, int) CutoffMonthYear() 
         {
             int cutOffMonth;

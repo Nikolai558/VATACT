@@ -29,6 +29,10 @@ namespace VatactLibrary
         public static BindingList<PersonModel> MinimumNotMetPeople = new BindingList<PersonModel>();
         public static BindingList<PersonModel> selectedPerson = new BindingList<PersonModel>();
 
+        /// <summary>
+        /// Use either the default Artcc Configuration or the User Specific Configuration
+        /// </summary>
+        /// <param name="hasConfigurationFiles">Has configuration file (true/false)</param>
         public static void ConfigurationSetup(bool hasConfigurationFiles) 
         {
             // TODO - Set this up so it grabs either the default or the user configuration files! 
@@ -43,6 +47,9 @@ namespace VatactLibrary
             }
         }
 
+        /// <summary>
+        /// Preform Version Check against Github
+        /// </summary>
         public static void VersionCheck() 
         {
             (string currentVersion, string errorMessage) = ApiCallData.GetCurrentVersion();

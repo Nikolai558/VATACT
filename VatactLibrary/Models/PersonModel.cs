@@ -8,33 +8,80 @@ namespace VatactLibrary.Models
 {
     public class PersonModel
     {
+        /// <summary>
+        /// Unique ID for the person
+        /// </summary>
         public int Id { get; set; }
+
+        /// <summary>
+        /// Vatsim's assigned CID for the person.
+        /// </summary>
         public string Cid { get; set; }
+
+        /// <summary>
+        /// Person First Name
+        /// </summary>
         public string FirstName { get; set; }
+
+        /// <summary>
+        /// Person Last Name
+        /// </summary>
         public string LastName { get; set; }
+
+        /// <summary>
+        /// Person Full Name
+        /// </summary>
         public string FullName { get { return $"{FirstName} {LastName}"; } }
+
+        /// <summary>
+        /// CID of person with their Full Name
+        /// </summary>
         public string AllInfo { get { return $"{Cid} - {FullName}"; } }
+
+        /// <summary>
+        /// List of Callsign Models for all of the connections this person made
+        /// </summary>
         public List<CallsignModel> AllCallsigns { get; set; }
+
+        /// <summary>
+        /// Total Artcc Minutes
+        /// </summary>
         public double TotalArtccMinutes { get; set; }
+
+        /// <summary>
+        /// Total Artcc Hours
+        /// </summary>
         public string TotalArtccHours 
         { 
             get 
             {
                 TimeSpan time = TimeSpan.FromMinutes(TotalArtccMinutes);
-                string hours = $"{(int)time.TotalHours}:{time.Minutes}:{time.Seconds}";
+                string hours = GetTimeFormat(time);
                 return hours;
             }
         }
+
+        /// <summary>
+        /// Total Other Minutes
+        /// </summary>
         public double TotalOtherMinutes { get; set; }
+
+        /// <summary>
+        /// Total Other Hours
+        /// </summary>
         public string TotalOtherHours
         {
             get
             {
                 TimeSpan time = TimeSpan.FromMinutes(TotalOtherMinutes);
-                string hours = $"{(int)time.TotalHours}:{time.Minutes}:{time.Seconds}";
+                string hours = GetTimeFormat(time);
                 return hours;
             }
         }
+
+        /// <summary>
+        /// Artcc Callsigns used, no duplicates are returned.
+        /// </summary>
         public List<string> ArtccCallsigns 
         {
             get 
@@ -62,6 +109,10 @@ namespace VatactLibrary.Models
                 return output;
             }
         }
+
+        /// <summary>
+        /// Other Callsigns used, no duplicates are returned.
+        /// </summary>
         public List<string> OtherCallsigns 
         {
             get 
@@ -88,6 +139,10 @@ namespace VatactLibrary.Models
                 return output;
             } 
         }
+
+        /// <summary>
+        /// Artcc Callsigns Formated with the Hours for that Callsign
+        /// </summary>
         public List<string> ArtccCallsignsAndHours 
         {
             get 
@@ -109,8 +164,7 @@ namespace VatactLibrary.Models
                         }
 
                         TimeSpan time = TimeSpan.FromMinutes(totalTime);
-                        string hours = $"{(int)time.TotalHours}:{time.Minutes}:{time.Seconds}";
-
+                        string hours = GetTimeFormat(time);
                         output.Add($"{callsign} - {hours}");
                     }
                 }
@@ -122,6 +176,10 @@ namespace VatactLibrary.Models
                 return output;
             }
         }
+
+        /// <summary>
+        /// Other Callsigns Formated with the Hours for that Callsign
+        /// </summary>
         public List<string> OtherCallsignsAndHours 
         {
             get 
@@ -142,8 +200,7 @@ namespace VatactLibrary.Models
                             }
                         }
                         TimeSpan time = TimeSpan.FromMinutes(totalTime);
-                        string hours = $"{(int)time.TotalHours}:{time.Minutes}:{time.Seconds}";
-
+                        string hours = GetTimeFormat(time);
                         output.Add($"{otherCallsign} - {hours}");
                     }
                 }
@@ -155,6 +212,54 @@ namespace VatactLibrary.Models
                 return output;
             }
         }
+
+        /// <summary>
+        /// Bool to see if they have met the minimum required hours.
+        /// </summary>
         public bool MetMinReqHours { get; set; }
+
+        /// <summary>
+        /// Formats the time on callsign or total Hours in HH:MM:SS
+        /// </summary>
+        /// <param name="time">TimeSpan from Minutes</param>
+        /// <returns>String formated HH:MM:SS</returns>
+        private string GetTimeFormat(TimeSpan time) 
+        {
+            string output;
+
+            if (time.TotalHours > 23)
+            {
+                string minutes;
+                string seconds;
+
+                if (time.Minutes < 10 && time.Seconds < 10)
+                {
+                    minutes = $"0{time.Minutes}";
+                    seconds = $"0{time.Seconds}";
+                    output = $"{(int)time.TotalHours}:{minutes}:{seconds}";
+                }
+                else if (time.Minutes < 10 && time.Seconds > 10)
+                {
+                    minutes = $"0{time.Minutes}";
+                    output = $"{(int)time.TotalHours}:{minutes}:{time.Seconds}";
+                }
+                else if (time.Minutes > 10 && time.Seconds < 10)
+                {
+                    seconds = $"0{time.Seconds}";
+                    output = $"{(int)time.TotalHours}:{time.Minutes}:{seconds}";
+                }
+                else
+                {
+                    output = $"{(int)time.TotalHours}:{time.Minutes}:{time.Seconds}";
+                }
+            }
+            else
+            {
+                output = time.ToString("c");
+
+            }
+
+            return output;
+        }
     }
 }

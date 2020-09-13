@@ -9,6 +9,10 @@ namespace VatactLibrary.DataAccess
 {
     public class DataManipulation
     {
+        /// <summary>
+        /// Calculate the Total Minutes for Artcc and Other, also checks to see if they met the required hours.
+        /// </summary>
+        /// <param name="person">Person Model</param>
         public static void CalculateMinimumHoursRequirement(PersonModel person)
         {
             bool requirementMet;
