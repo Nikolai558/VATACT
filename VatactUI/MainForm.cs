@@ -266,7 +266,7 @@ namespace VatactUI
 
             if (GlobalConfig.selectedPerson.Count != 0 && GlobalConfig.selectedPerson.First() != null)
             {
-                Height = 610;
+                Height = 615;
 
                 artccHoursLabel.Text = $"{artccComboBox.SelectedValue} Total Hours (hh:mm:ss): {GlobalConfig.selectedPerson.First().TotalArtccHours}";
                 otherControlHoursLabel.Text = $"Other Total Hours (hh:mm:ss): {GlobalConfig.selectedPerson.First().TotalOtherHours}";
@@ -384,6 +384,7 @@ namespace VatactUI
         {
             GlobalConfig.SaveFileDirectory = saveDirectoryTextBox.Text;
             VatactLibrary.DataAccess.TextFileData.WriteToTextFile(GlobalConfig.AllPeople.ToList());
+            saveButton.Enabled = true;
         }
     }
 }

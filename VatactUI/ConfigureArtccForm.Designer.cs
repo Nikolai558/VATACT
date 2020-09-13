@@ -61,6 +61,8 @@
             // 
             // configurationPanel
             // 
+            this.configurationPanel.AutoScroll = true;
+            this.configurationPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.configurationPanel.Location = new System.Drawing.Point(17, 53);
             this.configurationPanel.Name = "configurationPanel";
             this.configurationPanel.Size = new System.Drawing.Size(859, 287);
@@ -90,7 +92,7 @@
             // 
             this.templatePrefixLabel.AutoSize = true;
             this.templatePrefixLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.templatePrefixLabel.Location = new System.Drawing.Point(72, 31);
+            this.templatePrefixLabel.Location = new System.Drawing.Point(72, 30);
             this.templatePrefixLabel.Name = "templatePrefixLabel";
             this.templatePrefixLabel.Size = new System.Drawing.Size(77, 21);
             this.templatePrefixLabel.TabIndex = 3;
@@ -306,6 +308,7 @@
             // saveButton
             // 
             this.saveButton.BackColor = System.Drawing.Color.DimGray;
+            this.saveButton.Enabled = false;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.Location = new System.Drawing.Point(126, 346);
@@ -318,6 +321,7 @@
             // resetButton
             // 
             this.resetButton.BackColor = System.Drawing.Color.DimGray;
+            this.resetButton.Enabled = false;
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.resetButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetButton.Location = new System.Drawing.Point(773, 346);
@@ -326,10 +330,12 @@
             this.resetButton.TabIndex = 22;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = false;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // checkAllButton
             // 
             this.checkAllButton.BackColor = System.Drawing.Color.DimGray;
+            this.checkAllButton.Enabled = false;
             this.checkAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkAllButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkAllButton.Location = new System.Drawing.Point(551, 346);
@@ -338,10 +344,12 @@
             this.checkAllButton.TabIndex = 23;
             this.checkAllButton.Text = "Check ALL";
             this.checkAllButton.UseVisualStyleBackColor = false;
+            this.checkAllButton.Click += new System.EventHandler(this.checkAllButton_Click);
             // 
             // uncheckAllButton
             // 
             this.uncheckAllButton.BackColor = System.Drawing.Color.DimGray;
+            this.uncheckAllButton.Enabled = false;
             this.uncheckAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.uncheckAllButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uncheckAllButton.Location = new System.Drawing.Point(660, 346);
@@ -350,6 +358,7 @@
             this.uncheckAllButton.TabIndex = 24;
             this.uncheckAllButton.Text = "Uncheck ALL";
             this.uncheckAllButton.UseVisualStyleBackColor = false;
+            this.uncheckAllButton.Click += new System.EventHandler(this.uncheckAllButton_Click);
             // 
             // autoPopulateButton
             // 
@@ -362,6 +371,7 @@
             this.autoPopulateButton.TabIndex = 25;
             this.autoPopulateButton.Text = "Auto Populate";
             this.autoPopulateButton.UseVisualStyleBackColor = false;
+            this.autoPopulateButton.Click += new System.EventHandler(this.autoPopulateButton_Click);
             // 
             // artccComboBox
             // 
@@ -374,6 +384,7 @@
             this.artccComboBox.Name = "artccComboBox";
             this.artccComboBox.Size = new System.Drawing.Size(110, 33);
             this.artccComboBox.TabIndex = 26;
+            this.artccComboBox.SelectedIndexChanged += new System.EventHandler(this.artccComboBox_SelectedIndexChanged);
             // 
             // newArtccLinkLabel
             // 

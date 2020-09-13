@@ -86,17 +86,17 @@
             this.calculateHoursGroupBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.calculateHoursGroupBox.Location = new System.Drawing.Point(12, 12);
             this.calculateHoursGroupBox.Name = "calculateHoursGroupBox";
-            this.calculateHoursGroupBox.Size = new System.Drawing.Size(396, 264);
+            this.calculateHoursGroupBox.Size = new System.Drawing.Size(414, 261);
             this.calculateHoursGroupBox.TabIndex = 0;
             this.calculateHoursGroupBox.TabStop = false;
-            this.calculateHoursGroupBox.Text = "Calculate Hours";
+            this.calculateHoursGroupBox.Text = "Configuration";
             // 
             // calculateButton
             // 
             this.calculateButton.BackColor = System.Drawing.Color.DimGray;
             this.calculateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.calculateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculateButton.Location = new System.Drawing.Point(15, 219);
+            this.calculateButton.Location = new System.Drawing.Point(131, 222);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(143, 33);
             this.calculateButton.TabIndex = 9;
@@ -110,12 +110,12 @@
             this.configureLinkLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.configureLinkLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.configureLinkLabel.LinkColor = System.Drawing.Color.LightGray;
-            this.configureLinkLabel.Location = new System.Drawing.Point(212, 191);
+            this.configureLinkLabel.Location = new System.Drawing.Point(301, 191);
             this.configureLinkLabel.Name = "configureLinkLabel";
-            this.configureLinkLabel.Size = new System.Drawing.Size(175, 21);
+            this.configureLinkLabel.Size = new System.Drawing.Size(95, 21);
             this.configureLinkLabel.TabIndex = 14;
             this.configureLinkLabel.TabStop = true;
-            this.configureLinkLabel.Text = "Configure / New ARTCC";
+            this.configureLinkLabel.Text = "Create / Edit";
             this.configureLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ConfigureLinkLabel_LinkClicked);
             // 
             // artccComboBox
@@ -125,7 +125,7 @@
             this.artccComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.artccComboBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.artccComboBox.FormattingEnabled = true;
-            this.artccComboBox.Location = new System.Drawing.Point(277, 219);
+            this.artccComboBox.Location = new System.Drawing.Point(293, 154);
             this.artccComboBox.Name = "artccComboBox";
             this.artccComboBox.Size = new System.Drawing.Size(110, 33);
             this.artccComboBox.TabIndex = 8;
@@ -134,11 +134,11 @@
             // 
             this.artccLabel.AutoSize = true;
             this.artccLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.artccLabel.Location = new System.Drawing.Point(212, 225);
+            this.artccLabel.Location = new System.Drawing.Point(192, 160);
             this.artccLabel.Name = "artccLabel";
-            this.artccLabel.Size = new System.Drawing.Size(59, 21);
+            this.artccLabel.Size = new System.Drawing.Size(95, 21);
             this.artccLabel.TabIndex = 12;
-            this.artccLabel.Text = "ARTCC:";
+            this.artccLabel.Text = "ARTCC / FIR:";
             // 
             // yearTextBox
             // 
@@ -148,7 +148,7 @@
             this.yearTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.yearTextBox.Location = new System.Drawing.Point(293, 116);
             this.yearTextBox.Name = "yearTextBox";
-            this.yearTextBox.Size = new System.Drawing.Size(94, 29);
+            this.yearTextBox.Size = new System.Drawing.Size(110, 29);
             this.yearTextBox.TabIndex = 6;
             this.yearTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -156,7 +156,7 @@
             // 
             this.yearLabel.AutoSize = true;
             this.yearLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearLabel.Location = new System.Drawing.Point(186, 118);
+            this.yearLabel.Location = new System.Drawing.Point(194, 118);
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(93, 21);
             this.yearLabel.TabIndex = 10;
@@ -212,9 +212,9 @@
             this.txtFilePathTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFilePathTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilePathTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtFilePathTextBox.Location = new System.Drawing.Point(112, 74);
+            this.txtFilePathTextBox.Location = new System.Drawing.Point(134, 74);
             this.txtFilePathTextBox.Name = "txtFilePathTextBox";
-            this.txtFilePathTextBox.Size = new System.Drawing.Size(275, 29);
+            this.txtFilePathTextBox.Size = new System.Drawing.Size(269, 29);
             this.txtFilePathTextBox.TabIndex = 4;
             // 
             // txtFilePathLabel
@@ -283,7 +283,7 @@
             this.saveGroupBox.Controls.Add(this.saveLabel);
             this.saveGroupBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveGroupBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.saveGroupBox.Location = new System.Drawing.Point(432, 12);
+            this.saveGroupBox.Location = new System.Drawing.Point(442, 12);
             this.saveGroupBox.Name = "saveGroupBox";
             this.saveGroupBox.Size = new System.Drawing.Size(396, 118);
             this.saveGroupBox.TabIndex = 1;
@@ -344,7 +344,7 @@
             this.viewControllerGroupBox.Controls.Add(this.controllerLabel);
             this.viewControllerGroupBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewControllerGroupBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.viewControllerGroupBox.Location = new System.Drawing.Point(432, 167);
+            this.viewControllerGroupBox.Location = new System.Drawing.Point(442, 164);
             this.viewControllerGroupBox.Name = "viewControllerGroupBox";
             this.viewControllerGroupBox.Size = new System.Drawing.Size(396, 109);
             this.viewControllerGroupBox.TabIndex = 2;
@@ -390,7 +390,7 @@
             // 
             this.artccHoursLabel.AutoSize = true;
             this.artccHoursLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.artccHoursLabel.Location = new System.Drawing.Point(7, 308);
+            this.artccHoursLabel.Location = new System.Drawing.Point(17, 312);
             this.artccHoursLabel.Name = "artccHoursLabel";
             this.artccHoursLabel.Size = new System.Drawing.Size(369, 30);
             this.artccHoursLabel.TabIndex = 3;
@@ -400,7 +400,7 @@
             // 
             this.otherControlHoursLabel.AutoSize = true;
             this.otherControlHoursLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otherControlHoursLabel.Location = new System.Drawing.Point(427, 308);
+            this.otherControlHoursLabel.Location = new System.Drawing.Point(437, 312);
             this.otherControlHoursLabel.Name = "otherControlHoursLabel";
             this.otherControlHoursLabel.Size = new System.Drawing.Size(344, 30);
             this.otherControlHoursLabel.TabIndex = 4;
@@ -413,7 +413,7 @@
             this.artccCallsignListBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.artccCallsignListBox.FormattingEnabled = true;
             this.artccCallsignListBox.ItemHeight = 21;
-            this.artccCallsignListBox.Location = new System.Drawing.Point(12, 352);
+            this.artccCallsignListBox.Location = new System.Drawing.Point(22, 356);
             this.artccCallsignListBox.Name = "artccCallsignListBox";
             this.artccCallsignListBox.Size = new System.Drawing.Size(396, 212);
             this.artccCallsignListBox.TabIndex = 5;
@@ -425,7 +425,7 @@
             this.otherCallsignListBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.otherCallsignListBox.FormattingEnabled = true;
             this.otherCallsignListBox.ItemHeight = 21;
-            this.otherCallsignListBox.Location = new System.Drawing.Point(432, 352);
+            this.otherCallsignListBox.Location = new System.Drawing.Point(442, 356);
             this.otherCallsignListBox.Name = "otherCallsignListBox";
             this.otherCallsignListBox.Size = new System.Drawing.Size(396, 212);
             this.otherCallsignListBox.TabIndex = 6;
@@ -434,7 +434,7 @@
             // 
             this.processingLabel.AutoSize = true;
             this.processingLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.processingLabel.Location = new System.Drawing.Point(469, 276);
+            this.processingLabel.Location = new System.Drawing.Point(462, 276);
             this.processingLabel.Name = "processingLabel";
             this.processingLabel.Size = new System.Drawing.Size(229, 21);
             this.processingLabel.TabIndex = 13;
@@ -445,7 +445,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(839, 571);
+            this.ClientSize = new System.Drawing.Size(844, 572);
             this.Controls.Add(this.processingLabel);
             this.Controls.Add(this.otherCallsignListBox);
             this.Controls.Add(this.artccCallsignListBox);

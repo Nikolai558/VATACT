@@ -18,7 +18,6 @@ namespace VatactUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // TODO - Version Check and Download, call the function here?
             GlobalConfig.VersionCheck();
 
             // TODO - See if this user has configuration file!
@@ -26,6 +25,8 @@ namespace VatactUI
             GlobalConfig.ConfigurationSetup(false);
 
             Application.Run(new MainForm());
+            //Application.Run(new ConfigureArtccForm());
+
         }
     }
 }
