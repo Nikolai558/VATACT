@@ -89,11 +89,11 @@ namespace VatactLibrary.Models
                 List<string> output = new List<string>();
                 foreach (CallsignModel callsign in AllCallsigns)
                 {
-                    foreach (string prefix in GlobalConfig.ArtccDictionary[GlobalConfig.SelectedArtcc])
+                    foreach (string prefix in GlobalConfig.ArtccDictionary[GlobalConfig.SelectedArtcc].Keys.ToList())
                     {
                         if (callsign.Callsign.IndexOf(prefix, 0, 4) != -1)
                         {
-                            foreach (string suffix in GlobalConfig.ControlSuffix)
+                            foreach (string suffix in GlobalConfig.ArtccDictionary[GlobalConfig.SelectedArtcc][prefix])
                             {
                                 if (callsign.Callsign.IndexOf(suffix, callsign.Callsign.Count()-4, 4) != -1)
                                 {
