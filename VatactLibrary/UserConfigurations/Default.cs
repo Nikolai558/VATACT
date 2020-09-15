@@ -32,6 +32,12 @@ namespace VatactLibrary.UserConfigurations
         private static readonly List<string> ZDCControlPrefix = new List<string>() { "DCA_", "IAD_", "HEF_", "JPN_", "DOV_", "APG_", "MTN_", "BWI_", "ADW_", "ESN_", "FDK_", "HGR_", "NHK_", "NUI_", "SBY_", "HFF_", "NKT_", "ECG_", "FAY_", "POB_", "FBG_", "GSB_", "NCA_", "OAJ_", "ISO_", "EWN_", "13NC", "RDU_", "NJM_", "ILM_", "ACY_", "BKT_", "CHO_", "DAA_", "FAF_", "LFI_", "LYH_", "PHF_", "NGU_", "ORF_", "NYG_", "RIC_", "ROA_", "NTU_", "WAL_", "LWB_", "MRB_" };
 
         /// <summary>
+        /// Dictionary with Default Artcc's, Default Prefix's, and Default Suffix's
+        /// Dictionary<string (ARTCC CODE), Dictionary<string (PREFIX LABEL), List<string (AVAILABLE SUFFIX'S)>>>
+        /// </summary>
+        public static readonly Dictionary<string, Dictionary<string, List<string>>> defaultArtccDictionary = new Dictionary<string, Dictionary<string, List<string>>>();
+
+        /// <summary>
         /// Default Control Suffix's
         /// </summary>
         public static readonly List<string> ControlSuffix = new List<string>() { "_DEL", "_GND", "_TWR", "_APP", "_DEP", "_CTR", "_FSS" };
@@ -39,7 +45,7 @@ namespace VatactLibrary.UserConfigurations
         /// <summary>
         /// Default Artcc Dictionary
         /// </summary>
-        public static readonly Dictionary<string, List<string>> defaultArtccDictionary = new Dictionary<string, List<string>>
+        public static readonly Dictionary<string, List<string>> defaultSetupArtccDictionary = new Dictionary<string, List<string>>
         {
             // Western Region (USA 7)
             { "ZLC", ZLCControlPrefix },
@@ -67,5 +73,23 @@ namespace VatactLibrary.UserConfigurations
             { "ZNY", ZNYControlPrefix },
             { "ZDC", ZDCControlPrefix },
         };
+
+        public static void DefaultArtccDictionarySetup() 
+        {
+            foreach (string artcc in defaultSetupArtccDictionary.Keys.ToList())
+            {
+                defaultArtccDictionary.Add(artcc, new Dictionary<string, List<string>>());
+
+                foreach (string prefix in defaultSetupArtccDictionary[artcc])
+                {
+                    defaultArtccDictionary[artcc].Add(prefix, new List<string>());
+
+                    foreach (string suffix in ControlSuffix)
+                    {
+                        defaultArtccDictionary[artcc][prefix].Add(suffix);
+                    }
+                }
+            }
+        }
     }
 }

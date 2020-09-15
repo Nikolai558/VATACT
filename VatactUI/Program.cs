@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,8 +22,16 @@ namespace VatactUI
             GlobalConfig.VersionCheck();
 
             // TODO - See if this user has configuration file!
-            //MessageBox.Show("ARTCC Configuration could not be found\n\nIt is highly recomended to set up your ARTCC\n\nDefault ARTCC Settings are Loaded to start!");
-            GlobalConfig.ConfigurationSetup(false);
+            DirectoryInfo configDirectory = new DirectoryInfo(Application.LocalUserAppDataPath);
+            if (configDirectory.GetFiles("*.txt").Count() >= 1)
+            {
+                GlobalConfig.ConfigurationSetup(true);
+            }
+            else
+            {
+                MessageBox.Show("ARTCC Configuration could not be found\n\nIt is highly recomended to set up your ARTCC\n\nDefault ARTCC Settings are Loaded to start!");
+                GlobalConfig.ConfigurationSetup(false);
+            }
 
             Application.Run(new MainForm());
             //Application.Run(new ConfigureArtccForm());
