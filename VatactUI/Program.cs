@@ -24,6 +24,7 @@ namespace VatactUI
             //MessageBox.Show("ARTCC Configuration could not be found\n\nIt is highly recomended to set up your ARTCC\n\nDefault ARTCC Settings are Loaded to start!");
             GlobalConfig.ConfigurationSetup(false);
 
+
             Application.Run(new MainForm());
             //Application.Run(new ConfigureArtccForm());
 

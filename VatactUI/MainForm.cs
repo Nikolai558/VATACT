@@ -20,10 +20,20 @@ namespace VatactUI
         public MainForm()
         {
             InitializeComponent();
+            GlobalConfig.WireUpArtccDictionaryKeysList();
+            GlobalConfig.ArtccDictionaryKeysBindingSource.DataSource = GlobalConfig.ArtccDictionaryKeys;
+            artccComboBox.DataSource = GlobalConfig.ArtccDictionaryKeysBindingSource;
 
-            artccComboBox.DataSource = GlobalConfig.ArtccDictionary.Keys.ToList();
+            artccComboBox.DataSource = GlobalConfig.ArtccDictionaryKeys;
+            GlobalConfig.ArtccDictionaryKeys.ListChanged += ArtccDictionaryKeys_ListChanged;
             processingLabel.Visible = false;
             Height = 325;
+        }
+
+        private void ArtccDictionaryKeys_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            Console.WriteLine("********************************");
+            //WireUpList();
         }
 
         private bool ValidateCalculateButton() 
@@ -140,12 +150,12 @@ namespace VatactUI
             frm.Height = 445;
             frm.FormClosing += ConfigureFormClosingEventHandler;
             frm.Show();
-            NotImplementedMessage();
         }
 
         private void ConfigureFormClosingEventHandler(object sender, FormClosingEventArgs e) 
         {
             configureLinkLabel.Enabled = true;
+            WireUpList();
         }
 
         private void EnableFields(bool enable) 
@@ -268,7 +278,15 @@ namespace VatactUI
             {
                 Height = 615;
 
-                artccHoursLabel.Text = $"{artccComboBox.SelectedValue} Total Hours (hh:mm:ss): {GlobalConfig.selectedPerson.First().TotalArtccHours}";
+                string[] artccOnly = artccComboBox.SelectedValue.ToString().Split('_');
+                if (artccOnly.Count() >= 3 )
+                {
+                    artccHoursLabel.Text = $"{artccOnly[3]} Total Hours (hh:mm:ss): {GlobalConfig.selectedPerson.First().TotalArtccHours}";
+                }
+                else
+                {
+                    artccHoursLabel.Text = $"{artccComboBox.SelectedValue} Total Hours (hh:mm:ss): {GlobalConfig.selectedPerson.First().TotalArtccHours}";
+                }
                 otherControlHoursLabel.Text = $"Other Total Hours (hh:mm:ss): {GlobalConfig.selectedPerson.First().TotalOtherHours}";
 
                 artccCallsignListBox.DataSource = GlobalConfig.selectedPerson.First().ArtccCallsignsAndHours;
@@ -284,6 +302,24 @@ namespace VatactUI
             }
 
 
+            if (GlobalConfig.ArtccDictionaryKeys.Count != GlobalConfig.ArtccDictionary.Keys.Count() || GlobalConfig.CustomArtccDictionary.Count() >= 1)
+            {
+                if (GlobalConfig.ArtccDictionaryKeys.Count != GlobalConfig.ArtccDictionary.Keys.Count())
+                {
+                    GlobalConfig.WireUpArtccDictionaryKeysList();
+                }
+                
+                if (GlobalConfig.CustomArtccDictionary.Count() >= 1)
+                {
+                    foreach (string key in GlobalConfig.CustomArtccDictionary.Keys)
+                    {
+                        if (!GlobalConfig.ArtccDictionary.Keys.Contains(key))
+                        {
+                            GlobalConfig.WireUpArtccDictionaryKeysList();
+                        }
+                    }
+                }
+            }
         }
 
         private void ControllerComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -357,6 +393,7 @@ namespace VatactUI
             {
                 isValid = false;
                 errorMessage += $"You haven't done any Calculations.\n";
+                MessageBox.Show(errorMessage);
                 return isValid;
             }
 

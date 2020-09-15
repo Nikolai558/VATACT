@@ -288,7 +288,7 @@
             this.saveGroupBox.Size = new System.Drawing.Size(396, 118);
             this.saveGroupBox.TabIndex = 1;
             this.saveGroupBox.TabStop = false;
-            this.saveGroupBox.Text = "Save Controller Hours";
+            this.saveGroupBox.Text = "Export Activity Report";
             // 
             // resetButton
             // 
@@ -322,9 +322,9 @@
             this.saveDirectoryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.saveDirectoryTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveDirectoryTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.saveDirectoryTextBox.Location = new System.Drawing.Point(126, 41);
+            this.saveDirectoryTextBox.Location = new System.Drawing.Point(137, 41);
             this.saveDirectoryTextBox.Name = "saveDirectoryTextBox";
-            this.saveDirectoryTextBox.Size = new System.Drawing.Size(261, 29);
+            this.saveDirectoryTextBox.Size = new System.Drawing.Size(250, 29);
             this.saveDirectoryTextBox.TabIndex = 10;
             // 
             // saveLabel
@@ -333,9 +333,9 @@
             this.saveLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveLabel.Location = new System.Drawing.Point(6, 43);
             this.saveLabel.Name = "saveLabel";
-            this.saveLabel.Size = new System.Drawing.Size(114, 21);
+            this.saveLabel.Size = new System.Drawing.Size(125, 21);
             this.saveLabel.TabIndex = 4;
-            this.saveLabel.Text = "Save Directory:";
+            this.saveLabel.Text = "Export Directory:";
             // 
             // viewControllerGroupBox
             // 
@@ -436,9 +436,9 @@
             this.processingLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.processingLabel.Location = new System.Drawing.Point(462, 276);
             this.processingLabel.Name = "processingLabel";
-            this.processingLabel.Size = new System.Drawing.Size(229, 21);
+            this.processingLabel.Size = new System.Drawing.Size(217, 21);
             this.processingLabel.TabIndex = 13;
-            this.processingLabel.Text = "** Still Processing: {} of {} Left **";
+            this.processingLabel.Text = "** Processing **( {} Cid\'s Left )";
             // 
             // MainForm
             // 
