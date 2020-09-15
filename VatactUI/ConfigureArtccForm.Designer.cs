@@ -184,7 +184,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(894, 422);
+            this.ClientSize = new System.Drawing.Size(894, 421);
             this.Controls.Add(this.newArtccLinkLabel);
             this.Controls.Add(this.artccComboBox);
             this.Controls.Add(this.autoPopulateButton);

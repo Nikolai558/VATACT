@@ -147,7 +147,8 @@ namespace VatactUI
         {
             configureLinkLabel.Enabled = false;
             Form frm = new ConfigureArtccForm();
-            frm.Height = 445;
+            Hide();
+            frm.Height = 460;
             frm.FormClosing += ConfigureFormClosingEventHandler;
             frm.Show();
         }
@@ -155,6 +156,7 @@ namespace VatactUI
         private void ConfigureFormClosingEventHandler(object sender, FormClosingEventArgs e) 
         {
             configureLinkLabel.Enabled = true;
+            Show();
             WireUpList();
         }
 
@@ -301,21 +303,23 @@ namespace VatactUI
                 failedMinReqCheckBox.Text = "Failed Hour Requirement Only";
             }
 
-
-            if (GlobalConfig.ArtccDictionaryKeys.Count != GlobalConfig.ArtccDictionary.Keys.Count() || GlobalConfig.CustomArtccDictionary.Count() >= 1)
+            if (artccComboBox.Enabled)
             {
-                if (GlobalConfig.ArtccDictionaryKeys.Count != GlobalConfig.ArtccDictionary.Keys.Count())
+                if (GlobalConfig.ArtccDictionaryKeys.Count != GlobalConfig.ArtccDictionary.Keys.Count() || GlobalConfig.CustomArtccDictionary.Count() >= 1)
                 {
-                    GlobalConfig.WireUpArtccDictionaryKeysList();
-                }
-                
-                if (GlobalConfig.CustomArtccDictionary.Count() >= 1)
-                {
-                    foreach (string key in GlobalConfig.CustomArtccDictionary.Keys)
+                    if (GlobalConfig.ArtccDictionaryKeys.Count != GlobalConfig.ArtccDictionary.Keys.Count())
                     {
-                        if (!GlobalConfig.ArtccDictionary.Keys.Contains(key))
+                        GlobalConfig.WireUpArtccDictionaryKeysList();
+                    }
+
+                    if (GlobalConfig.CustomArtccDictionary.Count() >= 1)
+                    {
+                        foreach (string key in GlobalConfig.CustomArtccDictionary.Keys)
                         {
-                            GlobalConfig.WireUpArtccDictionaryKeysList();
+                            if (!GlobalConfig.ArtccDictionary.Keys.Contains(key))
+                            {
+                                GlobalConfig.WireUpArtccDictionaryKeysList();
+                            }
                         }
                     }
                 }
