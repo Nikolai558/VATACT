@@ -1,0 +1,13 @@
+
+
+
+Changed Save to Export
+
+
+Added textbox to bottom of artcc configuration panel after auto populate button is pushed.
+
+added create new prefix link label at bottom of artcc configuration panel.
+
+Wired up Configure ARTCC Form (Can not load configuration, configuration is only available while the program is running even though we save it to a text file in %appdata\local%
+
+Artcc Combobox links to all (default and custom configuration) (again only while the program is loaded.)
