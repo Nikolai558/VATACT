@@ -1,7 +1,7 @@
 # VATACT (Vatsim Activity)
 Monitor and calculate the Vatsim Air Traffic Controller activity for a specific month. Primarily to be used by the Vatsim ARTCC staff to assist in controller roster maintenance.
 
-#### --Current_Version: V-0.0.8--
+#### --Current_Version: V-0.0.9--
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Nikolai558/VATACT)
 ![GitHub contributors](https://img.shields.io/github/contributors/Nikolai558/VATACT)
