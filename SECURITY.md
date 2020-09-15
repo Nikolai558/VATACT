@@ -6,7 +6,7 @@ The current release on github will always be supported. Any released marked as "
 | Version | Supported          |
 | ------- | ------------------ |
 | 1.x.x   | :white_check_mark: |
-| < 1.x.x | :x:                |
+| 0.0.x   | :x:                |
 
 ## Reporting a Vulnerability
 
