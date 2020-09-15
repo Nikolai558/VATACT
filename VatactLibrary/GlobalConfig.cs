@@ -67,7 +67,8 @@ namespace VatactLibrary
             }
             else
             {
-
+                ArtccDictionary = UserConfigurations.Default.defaultArtccDictionary;
+                UserConfigurations.ArtccConfiguration.LoadCustomArtcc();
             }
         }
 

@@ -65,15 +65,7 @@ namespace VatactLibrary.UserConfigurations
                 // TODO - FOR TESTING PURPOSES
                 //dicA.Concat(dicB).ToDictionary(kvp => kvp.Key, kvp => kvp.Value)
 
-                if (GlobalConfig.ArtccDictionary.ContainsKey(artccCustomName))
-                {
-                    // TODO - User is editing the Custom Config Artcc. Need to allow to edit.
-                    //MessageBox.Show("Can not edit Configuration yet.");
-                }
-                else
-                {
-                    GlobalConfig.ArtccDictionary.Add(artccCustomName, GlobalConfig.CustomArtccDictionary[artccCustomName]);
-                }
+                
 
                 return isComplete;
 
@@ -84,7 +76,7 @@ namespace VatactLibrary.UserConfigurations
 
         }
 
-        public static void PutCustomArtccIntoGlobalConfig(string lineInConfigFile, string artccCode) 
+        public static void PutCustomArtccIntoGlobalConfig(string lineInConfigFile, string CustomArtccCode) 
         {
             string[] cols = lineInConfigFile.Split(',');
             string[] getRidOfId = cols[0].Split('_');
@@ -123,25 +115,76 @@ namespace VatactLibrary.UserConfigurations
                 output[cols[0]].Add("_FSS");
             }
 
-            if (GlobalConfig.CustomArtccDictionary.ContainsKey(artccCode))
+            if (GlobalConfig.CustomArtccDictionary.ContainsKey(CustomArtccCode))
             {
-                GlobalConfig.CustomArtccDictionary[artccCode] = new Dictionary<string, List<string>> { { cols[0], new List<string>() } };
-                GlobalConfig.CustomArtccDictionary[artccCode][cols[0]] = output[cols[0]];
+                // TODO - HAVE TO ADD not SET
+                if (!GlobalConfig.CustomArtccDictionary[CustomArtccCode].ContainsKey(cols[0]))
+                {
+                    GlobalConfig.CustomArtccDictionary[CustomArtccCode] = new Dictionary<string, List<string>> { { cols[0], new List<string>() } };
+                    GlobalConfig.CustomArtccDictionary[CustomArtccCode][cols[0]] = output[cols[0]];
+                }
+                else
+                {
+                    GlobalConfig.CustomArtccDictionary[CustomArtccCode][cols[0]] = output[cols[0]];
+                }
             }
             else
             {
-                GlobalConfig.CustomArtccDictionary.Add(artccCode, new Dictionary<string, List<string>>());
-                GlobalConfig.CustomArtccDictionary[artccCode].Add(cols[0], new List<string>());
-                GlobalConfig.CustomArtccDictionary[artccCode][cols[0]] = output[cols[0]];
+                GlobalConfig.CustomArtccDictionary.Add(CustomArtccCode, new Dictionary<string, List<string>>());
+                GlobalConfig.CustomArtccDictionary[CustomArtccCode].Add(cols[0], new List<string>());
+                GlobalConfig.CustomArtccDictionary[CustomArtccCode][cols[0]] = output[cols[0]];
+            }
+
+            // TODO - Add the thing to ARTCC Dictionary
+            if (GlobalConfig.ArtccDictionary.ContainsKey(CustomArtccCode))
+            {
+                // TODO - User is editing the Custom Config Artcc. Need to allow to edit.
+                //MessageBox.Show("Can not edit Configuration yet.");
+                if (GlobalConfig.ArtccDictionary[CustomArtccCode].ContainsKey(cols[0]))
+                {
+                    GlobalConfig.ArtccDictionary[CustomArtccCode][cols[0]] = output[cols[0]];
+                }
+                else
+                {
+                    GlobalConfig.ArtccDictionary[CustomArtccCode].Add(cols[0], new List<string>());
+                    GlobalConfig.ArtccDictionary[CustomArtccCode][cols[0]] = output[cols[0]];
+                }
+            }
+            else
+            {
+                GlobalConfig.ArtccDictionary.Add(CustomArtccCode, GlobalConfig.CustomArtccDictionary[CustomArtccCode]);
             }
         }
 
-        public void LoadCustomArtcc(string artccCustomName) 
+        public static void LoadCustomArtcc() 
         {
             string directoryPath = Application.LocalUserAppDataPath;
-            string fullFilePath = $"{directoryPath}\\{artccCustomName}_Config.txt";
+            DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath); 
 
+            foreach (var file in directoryInfo.GetFiles("*.txt"))
+            {
+                string[] customArtccName = file.Name.Split('_');
 
+                string[] fileLines = File.ReadAllLines(file.FullName);
+                List<string> lines = new List<string>();
+
+                foreach (string line in fileLines)
+                {
+                    if (line == "Prefix,DEL,GND,APP,DEP,CTR,FSS")
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        lines.Add(line);
+                    }
+                }
+                
+                foreach (string line in lines)
+                {
+                    PutCustomArtccIntoGlobalConfig(line, $"___{customArtccName[3]}___");
+                }
+            }
         }
     }
 }
