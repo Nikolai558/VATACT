@@ -20,6 +20,10 @@ namespace VatactUI
         public MainForm()
         {
             InitializeComponent();
+            LoadLastSettings();
+
+            FormClosing += MainForm_FormClosing;
+
             GlobalConfig.WireUpArtccDictionaryKeysList();
             GlobalConfig.ArtccDictionaryKeysBindingSource.DataSource = GlobalConfig.ArtccDictionaryKeys;
             artccComboBox.DataSource = GlobalConfig.ArtccDictionaryKeysBindingSource;
@@ -28,6 +32,24 @@ namespace VatactUI
             GlobalConfig.ArtccDictionaryKeys.ListChanged += ArtccDictionaryKeys_ListChanged;
             processingLabel.Visible = false;
             Height = 325;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.UserSelectedCidListPath = txtFilePathTextBox.Text;
+            Properties.Settings.Default.UserSelectedYear = yearTextBox.Text;
+            Properties.Settings.Default.UserSelectedMinReq = reqHoursTextBox.Text;
+            Properties.Settings.Default.UserSelectedSavePath = saveDirectoryTextBox.Text;
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void LoadLastSettings() 
+        {
+            txtFilePathTextBox.Text = Properties.Settings.Default.UserSelectedCidListPath;
+            yearTextBox.Text = Properties.Settings.Default.UserSelectedYear;
+            reqHoursTextBox.Text = Properties.Settings.Default.UserSelectedMinReq;
+            saveDirectoryTextBox.Text = Properties.Settings.Default.UserSelectedSavePath;
         }
 
         private void ArtccDictionaryKeys_ListChanged(object sender, ListChangedEventArgs e)

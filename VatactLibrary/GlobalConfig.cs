@@ -13,7 +13,7 @@ namespace VatactLibrary
     public static class GlobalConfig
     {
         public static readonly string User = Environment.UserName;
-        public static readonly string ProgramVersion = "V-0.0.8";
+        public static readonly string ProgramVersion = "V-0.0.9";
 
         //public static Dictionary<string, List<string>> CustomPreFixAndSuffixDictionary = new Dictionary<string, List<string>>();
         //public static Dictionary<string, List<string>> DefaultPreFixAndSuffixDictionary = new Dictionary<string, List<string>>();

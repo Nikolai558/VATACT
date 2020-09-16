@@ -3,7 +3,7 @@ Notes and Todo's are updated as of: 09/10/2020 @ 1:45 PM MT
 
 // NOTE: Main Form Window Size Start = 855 x 325
 // NOTE: Main Form Window Size After = 855 x 615
-// NOTE: Configure Artcc Form Size Start = 910 x 445
+// NOTE: Configure Artcc Form Size Start = 910 x 460
 // NOTE: Colors used = "RGB(64,64,64)", "WhiteSmoke", "DimGray", "LightGray"
 
 
@@ -12,3 +12,8 @@ Notes and Todo's are updated as of: 09/10/2020 @ 1:45 PM MT
 // TODO - Save Settings from "last" session
 // TODO - If no configure file is found, Start application in configure form first
 // TODO - Get Logo / Icon for program
+
+// Interesting API's: 
+//   https://api.vatusa.net/v2/facility
+//   https://api.vatusa.net/v2/facility/{FAC_ID}/roster
+//   https://api.vatusa.net/v2/support/tickets/depts/ZLC/staff
