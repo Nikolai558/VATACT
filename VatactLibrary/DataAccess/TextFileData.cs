@@ -61,7 +61,7 @@ namespace VatactLibrary.DataAccess
 
             if (File.Exists(filePath))
             {
-                DialogResult dialogResult = MessageBox.Show("CID Hour Calculation for selected Month and year Found.\nWould you like to overwrite it?", "Overide File?", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("VATACT export data for the selected month and year found.\nWould you like to overwrite it?", "Overwrite File?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                 {
                     return;

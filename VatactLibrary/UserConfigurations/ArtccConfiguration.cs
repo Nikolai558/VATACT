@@ -48,7 +48,7 @@ namespace VatactLibrary.UserConfigurations
 
                 if (File.Exists(fullFilePath))
                 {
-                    overWrite = MessageBox.Show("You can only have one custom configuration per ARTCC.\n\nWould you like to overwrite the current configuration?", "Overwrite?", MessageBoxButtons.YesNo);
+                    overWrite = MessageBox.Show("You can only have one custom configuration per ARTCC / FIR.\n\nWould you like to overwrite the current configuration?", "Overwrite?", MessageBoxButtons.YesNo);
                 }
 
                 if (overWrite == DialogResult.Yes)

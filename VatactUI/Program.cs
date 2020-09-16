@@ -29,7 +29,7 @@ namespace VatactUI
             }
             else
             {
-                MessageBox.Show("ARTCC Configuration could not be found\n\nIt is highly recomended to set up your ARTCC\n\nDefault ARTCC Settings are Loaded to start!");
+                MessageBox.Show("ARTCC / FIR Configuration could not be found\n\nIt is highly recomended to set up your ARTCC / FIR.\n\nDefault ARTCC / FIR Settings are loaded to start!");
                 GlobalConfig.ConfigurationSetup(false);
             }
 

@@ -85,7 +85,7 @@ namespace VatactLibrary
             }
             else if (errorMessage == "404: Not Found")
             {
-                MessageBox.Show($"Program could not perform Version Check.\n\nhttps://github.com/Nikolai558/VATACT/blob/master/README.md\n\nThe above website could not be reached.");
+                MessageBox.Show($"Program could not perform Version Check.\n\nhttps://github.com/Nikolai558/VATACT\n\nThe above website could not be reached.");
             }
             else
             {

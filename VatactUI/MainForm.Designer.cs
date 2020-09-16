@@ -456,10 +456,11 @@
             this.Controls.Add(this.calculateHoursGroupBox);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "VATACT";
+            this.Text = "VATACT - Vatsim Activity";
             this.calculateHoursGroupBox.ResumeLayout(false);
             this.calculateHoursGroupBox.PerformLayout();
             this.saveGroupBox.ResumeLayout(false);
