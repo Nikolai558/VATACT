@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -138,7 +139,6 @@ namespace VatactLibrary.UserConfigurations
             // TODO - Add the thing to ARTCC Dictionary
             if (GlobalConfig.ArtccDictionary.ContainsKey(CustomArtccCode))
             {
-                // TODO - User is editing the Custom Config Artcc. Need to allow to edit.
                 //MessageBox.Show("Can not edit Configuration yet.");
                 if (GlobalConfig.ArtccDictionary[CustomArtccCode].ContainsKey(cols[0]))
                 {
@@ -185,6 +185,11 @@ namespace VatactLibrary.UserConfigurations
                     PutCustomArtccIntoGlobalConfig(line, $"___{customArtccName[3]}___");
                 }
             }
+        }
+
+        public static void PopulateConfigPanelWithCustom(ArtccConfiguration form, string customArtcc) 
+        {
+            // TODO - Wire up This
         }
     }
 }

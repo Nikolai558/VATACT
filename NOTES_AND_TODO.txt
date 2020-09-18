@@ -14,6 +14,7 @@ Notes and Todo's are updated as of: 09/10/2020 @ 1:45 PM MT
 // TODO - Get Logo / Icon for program
 
 // Interesting API's: 
+//   https://api.vatsim.net/api/ratings/{CID}/atcsessions/?page_size=50
 //   https://api.vatusa.net/v2/facility
 //   https://api.vatusa.net/v2/facility/{FAC_ID}/roster
 //   https://api.vatusa.net/v2/support/tickets/depts/ZLC/staff

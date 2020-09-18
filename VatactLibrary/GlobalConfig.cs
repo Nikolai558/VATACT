@@ -60,7 +60,6 @@ namespace VatactLibrary
         public static void ConfigurationSetup(bool hasConfigurationFiles) 
         {
             UserConfigurations.Default.DefaultArtccDictionarySetup();
-            // TODO - Set this up so it grabs either the default or the user configuration files! 
             if (!hasConfigurationFiles)
             {
                 ArtccDictionary = UserConfigurations.Default.defaultArtccDictionary;
