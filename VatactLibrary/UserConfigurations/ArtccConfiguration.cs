@@ -180,7 +180,7 @@ namespace VatactLibrary.UserConfigurations
             }
         }
 
-        public static void PopulateConfigPanelWithCustom(ArtccConfiguration form, string customArtcc) 
+        public static void PopulateConfigPanelWithCustom(ArtccConfiguration form, string customArtccName) 
         {
             // TODO - Wire up This
         }
