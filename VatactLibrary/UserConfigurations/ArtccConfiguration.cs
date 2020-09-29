@@ -63,13 +63,7 @@ namespace VatactLibrary.UserConfigurations
                     isComplete = false;
                 }
 
-                // TODO - FOR TESTING PURPOSES
-                //dicA.Concat(dicB).ToDictionary(kvp => kvp.Key, kvp => kvp.Value)
-
-                
-
                 return isComplete;
-
             }
 
             isComplete = false;
@@ -118,7 +112,6 @@ namespace VatactLibrary.UserConfigurations
 
             if (GlobalConfig.CustomArtccDictionary.ContainsKey(CustomArtccCode))
             {
-                // TODO - HAVE TO ADD not SET
                 if (!GlobalConfig.CustomArtccDictionary[CustomArtccCode].ContainsKey(cols[0]))
                 {
                     GlobalConfig.CustomArtccDictionary[CustomArtccCode] = new Dictionary<string, List<string>> { { cols[0], new List<string>() } };

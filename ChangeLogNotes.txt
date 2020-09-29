@@ -1,4 +1,11 @@
 
-Started Edit Configuration Code
 
-Added Temporary VATACT ICON
+Added Persistant Settings
+
+Main Form Window Title Bar is now "VATACT - Vatsim Activity"
+
+Configure Artcc Form Title Bar is now "Configure Artcc / FIR"
+
+Configure Artcc Form Link Label is now "New ARTCC / FIR"
+
+All locations that display "ARTCC" to the user has been updated to "ARTCC / FIR"

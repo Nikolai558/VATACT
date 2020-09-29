@@ -21,7 +21,6 @@ namespace VatactUI
 
             GlobalConfig.VersionCheck();
 
-            // TODO - See if this user has configuration file!
             DirectoryInfo configDirectory = new DirectoryInfo(Application.LocalUserAppDataPath);
             if (configDirectory.GetFiles("*.txt").Count() >= 1)
             {
@@ -34,8 +33,6 @@ namespace VatactUI
             }
 
             Application.Run(new MainForm());
-            //Application.Run(new ConfigureArtccForm());
-
         }
     }
 }
