@@ -20,6 +20,10 @@ namespace VatactUI
         public MainForm()
         {
             InitializeComponent();
+            LoadLastSettings();
+
+            FormClosing += MainForm_FormClosing;
+
             GlobalConfig.WireUpArtccDictionaryKeysList();
             GlobalConfig.ArtccDictionaryKeysBindingSource.DataSource = GlobalConfig.ArtccDictionaryKeys;
             artccComboBox.DataSource = GlobalConfig.ArtccDictionaryKeysBindingSource;
@@ -28,6 +32,24 @@ namespace VatactUI
             GlobalConfig.ArtccDictionaryKeys.ListChanged += ArtccDictionaryKeys_ListChanged;
             processingLabel.Visible = false;
             Height = 325;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.UserSelectedCidListPath = txtFilePathTextBox.Text;
+            Properties.Settings.Default.UserSelectedYear = yearTextBox.Text;
+            Properties.Settings.Default.UserSelectedMinReq = reqHoursTextBox.Text;
+            Properties.Settings.Default.UserSelectedSavePath = saveDirectoryTextBox.Text;
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void LoadLastSettings() 
+        {
+            txtFilePathTextBox.Text = Properties.Settings.Default.UserSelectedCidListPath;
+            yearTextBox.Text = Properties.Settings.Default.UserSelectedYear;
+            reqHoursTextBox.Text = Properties.Settings.Default.UserSelectedMinReq;
+            saveDirectoryTextBox.Text = Properties.Settings.Default.UserSelectedSavePath;
         }
 
         private void ArtccDictionaryKeys_ListChanged(object sender, ListChangedEventArgs e)
@@ -44,7 +66,7 @@ namespace VatactUI
             if (txtFilePathTextBox.Text == "")
             {
                 isValid = false;
-                errorMessages += "CID Text File List File Path is empty.\n";
+                errorMessages += "CID Text File Path is empty.\n";
             }
 
             if (monthTextBox.Text == "")
@@ -74,25 +96,25 @@ namespace VatactUI
             if (monthTextBox.Text.Count() != 2)
             {
                 isValid = false;
-                errorMessages += "Month field is invalid.\n";
+                errorMessages += "Month is not valid.\n";
             }
 
             if (yearTextBox.Text.Count() != 4)
             {
                 isValid = false;
-                errorMessages += "Year field is invalid.\n";
+                errorMessages += "Year is not valid.\n";
             }
 
             if (reqHoursTextBox.Text.Count() != 2)
             {
                 isValid = false;
-                errorMessages += "Minimum Hours Required is invalid.\n";
+                errorMessages += "Minimum Hours Required is not valid.\n";
             }
 
             if (!int.TryParse(monthTextBox.Text, out int output))
             {
                 isValid = false;
-                errorMessages += "Month field is invalid.\n";
+                errorMessages += "Month is not valid.\n";
             }
 
             if (output > 12 || output <= 00)
@@ -104,19 +126,19 @@ namespace VatactUI
             if (!int.TryParse(yearTextBox.Text, out output))
             {
                 isValid = false;
-                errorMessages += "Year field is invalid.\n";
+                errorMessages += "Year is not valid.\n";
             }
 
             if (output > 2100 || output < 1950)
             {
                 isValid = false;
-                errorMessages += $"Year is either way to far in the future or past.\n";
+                errorMessages += $"Year is either way too far in the future or past.\n";
             }
 
             if (!int.TryParse(reqHoursTextBox.Text, out output))
             {
                 isValid = false;
-                errorMessages += "Minimum Hours is Invalid.\n";
+                errorMessages += "Minimum Hours is not valid.\n";
             }
 
             if (output > 99 || output <= 00)
@@ -128,7 +150,7 @@ namespace VatactUI
             if (artccComboBox.SelectedItem == null)
             {
                 isValid = false;
-                errorMessages += "No ARTCC is selected.\n";
+                errorMessages += "No ARTCC / FIR is selected.\n";
             }
 
 
@@ -404,7 +426,7 @@ namespace VatactUI
             if (GlobalConfig.AllPeople.Count != File.ReadAllLines(txtFilePathTextBox.Text).ToList().Count())
             {
                 isValid = false;
-                errorMessage += $"{GlobalConfig.AllPeople.Count} is not the same count as the CID List.\n";
+                errorMessage += $"You cannot export yet. {GlobalConfig.AllPeople.Count} out of {File.ReadAllLines(txtFilePathTextBox.Text).ToList().Count()} processed.\n";
             }
             if (!Directory.Exists(saveDirectoryTextBox.Text))
             {

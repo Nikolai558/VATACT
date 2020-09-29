@@ -13,7 +13,7 @@ namespace VatactLibrary
     public static class GlobalConfig
     {
         public static readonly string User = Environment.UserName;
-        public static readonly string ProgramVersion = "V-0.0.8";
+        public static readonly string ProgramVersion = "V-0.0.9";
 
         //public static Dictionary<string, List<string>> CustomPreFixAndSuffixDictionary = new Dictionary<string, List<string>>();
         //public static Dictionary<string, List<string>> DefaultPreFixAndSuffixDictionary = new Dictionary<string, List<string>>();
@@ -60,7 +60,6 @@ namespace VatactLibrary
         public static void ConfigurationSetup(bool hasConfigurationFiles) 
         {
             UserConfigurations.Default.DefaultArtccDictionarySetup();
-            // TODO - Set this up so it grabs either the default or the user configuration files! 
             if (!hasConfigurationFiles)
             {
                 ArtccDictionary = UserConfigurations.Default.defaultArtccDictionary;
@@ -85,7 +84,7 @@ namespace VatactLibrary
             }
             else if (errorMessage == "404: Not Found")
             {
-                MessageBox.Show($"Program could not perform Version Check.\n\nhttps://github.com/Nikolai558/VATACT/blob/master/README.md\n\nThe above website could not be reached.");
+                MessageBox.Show($"Program could not perform Version Check.\n\nhttps://github.com/Nikolai558/VATACT\n\nThe above website could not be reached.");
             }
             else
             {

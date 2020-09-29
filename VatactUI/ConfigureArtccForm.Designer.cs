@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigureArtccForm));
             this.configurationPanel = new System.Windows.Forms.Panel();
             this.callsignPrefixLabel = new System.Windows.Forms.Label();
             this.callsignSuffixlabel = new System.Windows.Forms.Label();
@@ -171,12 +172,12 @@
             this.newArtccLinkLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newArtccLinkLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.newArtccLinkLabel.LinkColor = System.Drawing.Color.LightGray;
-            this.newArtccLinkLabel.Location = new System.Drawing.Point(291, 395);
+            this.newArtccLinkLabel.Location = new System.Drawing.Point(274, 395);
             this.newArtccLinkLabel.Name = "newArtccLinkLabel";
-            this.newArtccLinkLabel.Size = new System.Drawing.Size(92, 21);
+            this.newArtccLinkLabel.Size = new System.Drawing.Size(128, 21);
             this.newArtccLinkLabel.TabIndex = 27;
             this.newArtccLinkLabel.TabStop = true;
-            this.newArtccLinkLabel.Text = "New ARTCC";
+            this.newArtccLinkLabel.Text = "New ARTCC / FIR";
             this.newArtccLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newArtccLinkLabel_LinkClicked);
             // 
             // ConfigureArtccForm
@@ -198,9 +199,10 @@
             this.Controls.Add(this.configurationPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "ConfigureArtccForm";
-            this.Text = "ConfigureArtccForm";
+            this.Text = "Configure ARTCC / FIR";
             this.ResumeLayout(false);
             this.PerformLayout();
 

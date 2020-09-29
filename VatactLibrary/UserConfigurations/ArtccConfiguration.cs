@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,7 +49,7 @@ namespace VatactLibrary.UserConfigurations
 
                 if (File.Exists(fullFilePath))
                 {
-                    overWrite = MessageBox.Show("You can only have one custom configuration per ARTCC.\n\nWould you like to overwrite the current configuration?", "Overwrite?", MessageBoxButtons.YesNo);
+                    overWrite = MessageBox.Show("You can only have one custom configuration per ARTCC / FIR.\n\nWould you like to overwrite the current configuration?", "Overwrite?", MessageBoxButtons.YesNo);
                 }
 
                 if (overWrite == DialogResult.Yes)
@@ -62,13 +63,7 @@ namespace VatactLibrary.UserConfigurations
                     isComplete = false;
                 }
 
-                // TODO - FOR TESTING PURPOSES
-                //dicA.Concat(dicB).ToDictionary(kvp => kvp.Key, kvp => kvp.Value)
-
-                
-
                 return isComplete;
-
             }
 
             isComplete = false;
@@ -117,7 +112,6 @@ namespace VatactLibrary.UserConfigurations
 
             if (GlobalConfig.CustomArtccDictionary.ContainsKey(CustomArtccCode))
             {
-                // TODO - HAVE TO ADD not SET
                 if (!GlobalConfig.CustomArtccDictionary[CustomArtccCode].ContainsKey(cols[0]))
                 {
                     GlobalConfig.CustomArtccDictionary[CustomArtccCode] = new Dictionary<string, List<string>> { { cols[0], new List<string>() } };
@@ -138,7 +132,6 @@ namespace VatactLibrary.UserConfigurations
             // TODO - Add the thing to ARTCC Dictionary
             if (GlobalConfig.ArtccDictionary.ContainsKey(CustomArtccCode))
             {
-                // TODO - User is editing the Custom Config Artcc. Need to allow to edit.
                 //MessageBox.Show("Can not edit Configuration yet.");
                 if (GlobalConfig.ArtccDictionary[CustomArtccCode].ContainsKey(cols[0]))
                 {
@@ -185,6 +178,11 @@ namespace VatactLibrary.UserConfigurations
                     PutCustomArtccIntoGlobalConfig(line, $"___{customArtccName[3]}___");
                 }
             }
+        }
+
+        public static void PopulateConfigPanelWithCustom(ArtccConfiguration form, string customArtccName) 
+        {
+            // TODO - Wire up This
         }
     }
 }
